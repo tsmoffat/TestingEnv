@@ -4,7 +4,6 @@
     <list default="true" id="b79ddf2f-af9a-4410-b18c-3cc96671beb4" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Two element sum.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/two_phase_sum.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/TestingEnv.iml" afterPath="$PROJECT_DIR$/.idea/TestingEnv.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing.py" afterPath="$PROJECT_DIR$/Testing.py" />
     </list>
@@ -29,8 +28,8 @@
       <file leaf-file-name="Testing.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Testing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="187" column="41" selection-start-line="187" selection-start-column="41" selection-end-line="187" selection-end-column="41" />
+            <state relative-caret-position="2177">
+              <caret line="246" column="53" selection-start-line="246" selection-start-column="53" selection-end-line="246" selection-end-column="53" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -38,20 +37,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="two_phase_sum.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/two_phase_sum.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../pythonProject/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1583">
+            <state relative-caret-position="-1487">
               <caret line="84" column="82" selection-start-line="84" selection-start-column="42" selection-end-line="84" selection-end-column="82" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
@@ -345,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1471276512978</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Two element solutions now somewhat working, at least for a few combos&#10;">
+      <created>1471343405934</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1471343405935</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -385,7 +381,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Testing something out" />
     <MESSAGE value="More testing, trying to get two element solutions working" />
-    <option name="LAST_COMMIT_MESSAGE" value="More testing, trying to get two element solutions working" />
+    <MESSAGE value="Two element solutions now somewhat working, at least for a few combos&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Two element solutions now somewhat working, at least for a few combos&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -500,6 +497,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../pythonProject/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1487">
+          <caret line="84" column="82" selection-start-line="84" selection-start-column="42" selection-end-line="84" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/_pydecimal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="554" column="6" selection-start-line="554" selection-start-column="6" selection-end-line="554" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/two_phase_sum.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -508,20 +523,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../pythonProject/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1583">
-          <caret line="84" column="82" selection-start-line="84" selection-start-column="42" selection-end-line="84" selection-end-column="82" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Testing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="187" column="41" selection-start-line="187" selection-start-column="41" selection-end-line="187" selection-end-column="41" />
+        <state relative-caret-position="2177">
+          <caret line="246" column="53" selection-start-line="246" selection-start-column="53" selection-end-line="246" selection-end-column="53" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
