@@ -1,5 +1,7 @@
+"""Module to work out the required settings for MPAC"""
+from decimal import Decimal, getcontext
 import openpyxl as xl
-from decimal import *
+
 
 
 class Main:
@@ -104,7 +106,15 @@ class Main:
         else:
             sum2 = two_element_sum(
                 s180, s90, s45, s225, set180, set90, set45, set225, targetphase, phase, att)
-            sum2.Two_element_sum()
+            resultsdict = sum2.Two_element_sum()
+            results1 = resultsdict['solution1']
+            print(results1)
+            results2 = resultsdict['solution2']
+            row1 = resultsdict['row1']
+            row2 = resultsdict['row2']
+            att1 = resultsdict['att1']
+            att2 = resultsdict['att2']
+            print(row1, row2, results2, att1, att2)
 
 
 class two_element_sum(Main):
@@ -124,10 +134,12 @@ class two_element_sum(Main):
 
     def Two_element_sum(self):
         getcontext().prec = 6
+        solution1 = 0
         for i in self.set180:
             for j in self.set90:
 
                 result = i + j
+
                 if result == self.targetphase:
                     solution1 = i
                     solution2 = j
@@ -251,9 +263,9 @@ class two_element_sum(Main):
                         if row[self.phase].value == i:
                             row2 = int(row[0].value)
                             att2 = Decimal(row[self.att].value)
-        return {'solution1': solution1, 'solution2': solution2, 'row1': row1, 'att1': att1, 'row2': row2, 'att2': att2}
+        if solution1:
+            return {'solution1': solution1, 'solution2': solution2, 'row1': row1, 'att1': att1, 'row2': row2, 'att2': att2}
 
 
-
-m = Main()
-m.main()
+TESTBENCH = Main()
+TESTBENCH.main()
