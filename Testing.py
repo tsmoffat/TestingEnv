@@ -135,17 +135,17 @@ class two_element_sum(Main):
                     print("180 and 90")
                     for row in self.s180.iter_rows():
                         if row[self.phase].value == i:
-                            row180 = int(row[0].value)
-                            att180 = Decimal(row[self.att].value)
-                            print(row180)
-                            print(att180)
+                            row1 = int(row[0].value)
+                            att1 = Decimal(row[self.att].value)
+                            print(row1)
+                            print(att1)
 
                     for row in self.s90.iter_rows():
                         if row[self.phase].value == j:
-                            row90 = int(row[0].value)
-                            att90 = Decimal(row[self.att].value)
-                            print(row90)
-                            print(att90)
+                            row2 = int(row[0].value)
+                            att2 = Decimal(row[self.att].value)
+                            print(row2)
+                            print(att2)
 
         for i in self.set180:
             for j in self.set45:
@@ -157,17 +157,17 @@ class two_element_sum(Main):
                     print("180 and 45")
                     for row in self.s180.iter_rows():
                         if row[self.phase].value == i:
-                            row180 = int(row[0].value)
-                            att180 = Decimal(row[self.att].value)
-                            print(row180)
-                            print(att180)
+                            row1 = int(row[0].value)
+                            att1 = Decimal(row[self.att].value)
+                            print(row1)
+                            print(att1)
 
                     for row in self.s45.iter_rows():
                         if row[self.phase].value == j:
-                            row45 = int(row[0].value)
-                            att45 = Decimal(row[self.att].value)
-                            print(row45)
-                            print(att45)
+                            row2 = int(row[0].value)
+                            att2 = Decimal(row[self.att].value)
+                            print(row2)
+                            print(att2)
 
         for i in self.set180:
             for j in self.set225:
@@ -179,17 +179,17 @@ class two_element_sum(Main):
                     print("180 and 22.5")
                     for row in self.s180.iter_rows():
                         if row[self.phase].value == i:
-                            row180 = int(row[0].value)
-                            att180 = Decimal(row[self.att].value)
-                            print(row180)
-                            print(att180)
+                            row1 = int(row[0].value)
+                            att1 = Decimal(row[self.att].value)
+                            print(row1)
+                            print(att1)
 
                     for row in self.s225.iter_rows():
                         if row[self.phase].value == i:
-                            row225 = int(row[0].value)
-                            att225 = Decimal(row[self.att].value)
-                            print(row225)
-                            print(att225)
+                            row2 = int(row[0].value)
+                            att2 = Decimal(row[self.att].value)
+                            print(row2)
+                            print(att2)
 
         for i in self.set90:
             for j in self.set45:
@@ -201,17 +201,17 @@ class two_element_sum(Main):
                     print("90 and 45")
                     for row in self.s90.iter_rows():
                         if row[self.phase].value == i:
-                            row90 = int(row[0].value)
-                            att90 = Decimal(row[self.att].value)
-                            print(row90)
-                            print(att90)
+                            row1 = int(row[0].value)
+                            att1 = Decimal(row[self.att].value)
+                            print(row1)
+                            print(att1)
 
                     for row in self.s45.iter_rows():
                         if row[self.phase].value == j:
-                            row45 = int(row[0].value)
-                            att45 = Decimal(row[self.att].value)
-                            print(row45)
-                            print(att45)
+                            row2 = int(row[0].value)
+                            att2 = Decimal(row[self.att].value)
+                            print(row2)
+                            print(att2)
         for i in self.set90:
             for j in self.set225:
                 result = i + j
@@ -222,17 +222,17 @@ class two_element_sum(Main):
                     print("90 and 22.5")
                     for row in self.s90.iter_rows():
                         if row[self.phase].value == i:
-                            row90 = int(row[0].value)
-                            att90 = Decimal(row[self.att].value)
-                            print(row90)
-                            print(att90)
+                            row1 = int(row[0].value)
+                            att1 = Decimal(row[self.att].value)
+                            print(row1)
+                            print(att1)
 
                     for row in self.s225.iter_rows():
                         if row[self.phase].value == j:
-                            row225 = int(row[0].value)
-                            att225 = Decimal(row[self.att].value)
-                            print(row225)
-                            print(att225)
+                            row2 = int(row[0].value)
+                            att2 = Decimal(row[self.att].value)
+                            print(row2)
+                            print(att2)
 
         for i in self.set45:
             for j in self.set225:
@@ -244,8 +244,15 @@ class two_element_sum(Main):
                     print("45 and 22.5")
                     for row in self.s90.iter_rows():
                         if row[self.phase].value == i:
-                            row45 = int(row[0].value)
-                            att45 = Decimal(row[self.att].value)
+                            row1 = int(row[0].value)
+                            att1 = Decimal(row[self.att].value)
+
+                    for row in self.s90.iter_rows():
+                        if row[self.phase].value == i:
+                            row2 = int(row[0].value)
+                            att2 = Decimal(row[self.att].value)
+        return {'solution1': solution1, 'solution2': solution2, 'row1': row1, 'att1': att1, 'row2': row2, 'att2': att2}
+
 
 
 m = Main()
