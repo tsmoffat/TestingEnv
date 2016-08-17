@@ -1,10 +1,12 @@
 """Module to work out the required settings for MPAC"""
+from sys import exit
 from decimal import Decimal, getcontext
 import openpyxl as xl
 
 
 class Main:
     """Where most of the actual work happens, this could definitely be split into subclasses"""
+
     def __init__(self):
         print("Initialising")
 
@@ -48,25 +50,37 @@ class Main:
             if row[phase].value is not None:
                 list180.append(Decimal(row[phase].value))
         set180 = set(list180)
+
         list90 = []
         for row in s90.iter_rows(row_offset=2):
             if row[phase].value is not None:
                 list90.append(Decimal(row[phase].value))
         set90 = set(list90)
+
         list45 = []
         for row in s45.iter_rows(row_offset=2):
             if row[phase].value is not None:
-
                 list45.append(Decimal(row[phase].value))
         set45 = set(list45)
+
         list225 = []
         for row in s225.iter_rows(row_offset=2):
             if row[phase].value is not None:
-
                 list225.append(Decimal(row[phase].value))
         set225 = set(list225)
+        constants = {'s180': s180, 's90': s90, 's45': s45}
+        constants['s225'] = s225
+        constants['set180'] = set180
+        constants['set90'] = set90
+        constants['set45'] = set45
+        constants['set225'] = set225
+        constants['phase'] = phase
+        constants['att'] = att
+
         targetphase = Decimal(input("What phase do you want to achieve?"))
         targetatt = input("What attenuation do you want to achieve?")
+        constants['targetphase'] = targetphase
+        constants['targetatt'] = targetatt
         if targetphase in set180:
             print("Found it!")
             for row in s180.iter_rows():
@@ -75,6 +89,7 @@ class Main:
                     att180 = Decimal(row[att].value)
             print("Optimal solution found, it is state " + str(optimalrow))
             print(att180)
+            exit()
 
         elif targetphase in set90:
             print("Found it!")
@@ -84,6 +99,7 @@ class Main:
                     att90 = Decimal(row[att].value)
             print("Optimal solution found, it is state " + str(optimalrow))
             print(att90)
+            exit()
 
         elif targetphase in set45:
             print("Found it!")
@@ -93,6 +109,7 @@ class Main:
                     att45 = Decimal(row[att].value)
             print("Optimal solution found, it is state " + str(optimalrow))
             print(att45)
+            exit()
 
         elif targetphase in set225:
             print("Found it!")
@@ -102,21 +119,14 @@ class Main:
                     att225 = Decimal(row[att].value)
             print("Optimal solution found, it is state " + str(optimalrow))
             print(att225)
+            exit()
 
         else:
-            constants = {'s180': s180, 's90': s90, 's45': s45}
-            constants['s225'] = s225
-            constants['set180'] = set180
-            constants['set90'] = set90
-            constants['set45'] = set45
-            constants['set225'] = set225
-            constants['targetphase'] = targetphase
-            constants['phase'] = phase
-            constants['att'] = att
+
             sum2 = two_element_sum(constants)
             resultsdict = sum2.Two_element_sum()
-            if resultsdict['solution1']:
-                results1 = resultsdict['solution1']
+            results1 = resultsdict['solution1']
+            if results1:
                 print(results1)
                 results2 = resultsdict['solution2']
                 row1 = resultsdict['row1']
@@ -124,12 +134,15 @@ class Main:
                 att1 = resultsdict['att1']
                 att2 = resultsdict['att2']
                 print(row1, row2, results2, att1, att2)
+                exit()
             else:
                 print("This is a placeholder for now")
+                exit()
 
 
 class two_element_sum(Main):
     """For working out the two element sums"""
+
     def __init__(self, constants):
         getcontext().prec = 6
         self.s180 = constants['s180']
@@ -161,15 +174,11 @@ class two_element_sum(Main):
                         if row[self.phase].value == i:
                             row1 = int(row[0].value)
                             att1 = Decimal(row[self.att].value)
-                            print(row1)
-                            print(att1)
 
                     for row in self.s90.iter_rows():
                         if row[self.phase].value == j:
                             row2 = int(row[0].value)
                             att2 = Decimal(row[self.att].value)
-                            print(row2)
-                            print(att2)
 
         for i in self.set180:
             for j in self.set45:
@@ -275,6 +284,7 @@ class two_element_sum(Main):
                         if row[self.phase].value == i:
                             row2 = int(row[0].value)
                             att2 = Decimal(row[self.att].value)
+
         if solution1:
             return {'solution1': solution1, 'solution2': solution2, 'row1': row1, 'att1': att1, 'row2': row2, 'att2': att2}
 
@@ -307,6 +317,47 @@ class three_element_sum(Main):
                         solution3 = k
                         print("Found it! It requires three vectors")
                         print("180, 90 and 45")
+
+                        for row in self.s180.iter_rows():
+                            if row[self.phase].values == i:
+                                row1 = int(row[0].value)
+                                att1 = Decimal(row[self.att].value)
+
+                        for row in self.s90.iter_rows():
+                            if row[self.phase].values == j:
+                                row2 = int(row[0].value)
+                                att2 = Decimal(row[self.att].value)
+
+                        for row in self.s45.iter_rows():
+                            if row[self.phase].values == k:
+                                row3 = int(row[0].value)
+                                att3 = Decimal(row[self.att].value)
+
+        for i in self.set180:
+            for j in self.set45:
+                for k in self.set225:
+                    result = i + j + k
+                    if result == self.targetphase:
+                        solution1 = i
+                        solution2 = j
+                        solution3 = k
+                        print("Found it! It requires three vectors")
+                        print("180, 45 and 22.5")
+
+                        for row in self.s180.iter_rows():
+                            if row[self.phase].values == i:
+                                row1 = int(row[0].value)
+                                att1 = Decimal(row[self.att].value)
+
+                        for row in self.s45.iter_rows():
+                            if row[self.phase].values == j:
+                                row2 = int(row[0].value)
+                                att2 = Decimal(row[self.att].value)
+
+                        for row in self.s225.iter_rows():
+                            if row[self.phase].values == k:
+                                row3 = int(row[0].value)
+                                att3 = Decimal(row[self.att].value)
 
 
 TESTBENCH = Main()
