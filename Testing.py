@@ -3,8 +3,8 @@ from decimal import Decimal, getcontext
 import openpyxl as xl
 
 
-
 class Main:
+    """Where most of the actual work happens, this could definitely be split into subclasses"""
     def __init__(self):
         print("Initialising")
 
@@ -104,33 +104,45 @@ class Main:
             print(att225)
 
         else:
-            sum2 = two_element_sum(
-                s180, s90, s45, s225, set180, set90, set45, set225, targetphase, phase, att)
+            constants = {'s180': s180, 's90': s90, 's45': s45}
+            constants['s225'] = s225
+            constants['set180'] = set180
+            constants['set90'] = set90
+            constants['set45'] = set45
+            constants['set225'] = set225
+            constants['targetphase'] = targetphase
+            constants['phase'] = phase
+            constants['att'] = att
+            sum2 = two_element_sum(constants)
             resultsdict = sum2.Two_element_sum()
-            results1 = resultsdict['solution1']
-            print(results1)
-            results2 = resultsdict['solution2']
-            row1 = resultsdict['row1']
-            row2 = resultsdict['row2']
-            att1 = resultsdict['att1']
-            att2 = resultsdict['att2']
-            print(row1, row2, results2, att1, att2)
+            if resultsdict['solution1']:
+                results1 = resultsdict['solution1']
+                print(results1)
+                results2 = resultsdict['solution2']
+                row1 = resultsdict['row1']
+                row2 = resultsdict['row2']
+                att1 = resultsdict['att1']
+                att2 = resultsdict['att2']
+                print(row1, row2, results2, att1, att2)
+            else:
+                print("This is a placeholder for now")
 
 
 class two_element_sum(Main):
-    def __init__(self, s180, s90, s45, s225, set180, set90, set45, set225, targetphase, phase, att):
+    """For working out the two element sums"""
+    def __init__(self, constants):
         getcontext().prec = 6
-        self.s180 = s180
-        self.s90 = s90
-        self.s45 = s45
-        self.s225 = s225
-        self.set180 = set180
-        self.set90 = set90
-        self.set45 = set45
-        self.set225 = set225
-        self.targetphase = targetphase
-        self.phase = phase
-        self.att = att
+        self.s180 = constants['s180']
+        self.s90 = constants['s90']
+        self.s45 = constants['s45']
+        self.s225 = constants['s225']
+        self.set180 = constants['set180']
+        self.set90 = constants['set90']
+        self.set45 = constants['set45']
+        self.set225 = constants['set225']
+        self.targetphase = constants['targetphase']
+        self.phase = constants['phase']
+        self.att = constants['att']
 
     def Two_element_sum(self):
         getcontext().prec = 6
@@ -265,6 +277,36 @@ class two_element_sum(Main):
                             att2 = Decimal(row[self.att].value)
         if solution1:
             return {'solution1': solution1, 'solution2': solution2, 'row1': row1, 'att1': att1, 'row2': row2, 'att2': att2}
+
+
+class three_element_sum(Main):
+    def __init__(self, s180, s90, s45, s225, set180, set90, set45, set225, targetphase, phase, att):
+        getcontext().prec = 6
+        self.s180 = s180
+        self.s90 = s90
+        self.s45 = s45
+        self.s225 = s225
+        self.set180 = set180
+        self.set90 = set90
+        self.set45 = set45
+        self.set225 = set225
+        self.targetphase = targetphase
+        self.phase = phase
+        self.att = att
+
+    def three_element_sum(self):
+        getcontext().prec = 6
+        solution1 = 0
+        for i in self.set180:
+            for j in self.set90:
+                for k in self.set45:
+                    result = i + j + k
+                    if result == self.targetphase:
+                        solution1 = i
+                        solution2 = j
+                        solution3 = k
+                        print("Found it! It requires three vectors")
+                        print("180, 90 and 45")
 
 
 TESTBENCH = Main()
