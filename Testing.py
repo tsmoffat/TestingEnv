@@ -81,17 +81,9 @@ class Main:
         targetatt = input("What attenuation do you want to achieve?")
         constants['targetphase'] = targetphase
         constants['targetatt'] = targetatt
-        if targetphase in set180:
-            print("Found it!")
-            for row in s180.iter_rows():
-                if row[phase].value == targetphase:
-                    optimalrow = int(row[0].value)
-                    att180 = Decimal(row[att].value)
-            print("Optimal solution found, it is state " + str(optimalrow))
-            print(att180)
-            exit()
+        result18 = check180(list180, s180,)
 
-        elif targetphase in set90:
+        if targetphase in set90:
             print("Found it!")
             for row in s90.iter_rows():
                 if row[phase].value == targetphase:
@@ -138,6 +130,27 @@ class Main:
             else:
                 print("This is a placeholder for now")
                 exit()
+
+    def check180(self, list180, s180, targetphase, targetatt, phase, att):
+        if targetphase in list180:
+            print("Found it!")
+            for row in s180.iter_rows():
+                if row[phase].value == targetphase:
+                    row180 = int(row[0].value)
+                    att180 = Decimal(row[att].value)
+
+            print("Optimal solution found, it is state " + str(row180))
+            print(att180)
+            return {'row180': row180, 'att180': att180}
+            exit()
+        else:
+            closest = min(list180, key=lambda x: abs(x - targetphase))
+            for row in self.s180.iter_rows:
+                if row[phase].value == closest:
+                    row1 = int(row[0].value)
+                    att1 = Decimal(row[att].value)
+
+
 
 
 class two_element_sum(Main):
@@ -332,7 +345,6 @@ class three_element_sum(Main):
                             if row[self.phase].values == k:
                                 row3 = int(row[0].value)
                                 att3 = Decimal(row[self.att].value)
-
         for i in self.set180:
             for j in self.set45:
                 for k in self.set225:
