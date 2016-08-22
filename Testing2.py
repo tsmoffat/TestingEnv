@@ -1,6 +1,7 @@
 """Module to work on more ideas for MPAC tuning"""
 from decimal import Decimal, getcontext
 import openpyxl as xl
+from extras import check180
 
 
 class Main:
@@ -11,9 +12,9 @@ class Main:
         self.phase24 = 1
         self.phase28 = 2
         self.phase32 = 3
-        self.att24 = 5
-        self.att28 = 6
-        self.att32 = 7
+        self.att24 = 4
+        self.att28 = 5
+        self.att32 = 6
         self.dsastate24 = 1
         self.dsas2124 = 3
         self.dsastate28 = 6
@@ -30,7 +31,7 @@ class Main:
         s180 = workbook.get_sheet_by_name('180')
         s90 = workbook.get_sheet_by_name('90')
         s45 = workbook.get_sheet_by_name('45')
-        s225 = workbook.get_sheet_by_name('225')
+        s225 = workbook.get_sheet_by_name('22.5')
 
         self.targetphase = input("Please enter the desired phase shift for 28GHz")
         self.targetatt = input("Please enter the desired attenuation for 28GHz")
@@ -59,20 +60,11 @@ class Main:
                 list225.append(Decimal(row[self.phase28].value))
         set225 = set(list225)
 
-    def check180(self, s180, set180):
-        """180 degrees of magic"""
-        if self.targetphase in set180:
-            print("Found it!")
-            for row in s180.iter_rows():
-                if row[self.phase28].value == self.targetphase:
-                    row1 = int(row[0].value)
-                    att1 = Decimal(row[self.att28].value)
+        sol180 = check180(self, s180, set180)
+        if sol180['phase1'] == self.targetphase:
+            print("Do stuff")
 
-            print("Optimal solution found, it is state " + str(row1))
-            print(att1)
-            return{'row1': row1, 'att1': att1}
-        else:
-            closest = min(set180, key=lambda x: abs(x - self.targetphase))
-            for row in s180.iter_rows:
-                if row[phase].value == closest:
-                    
+    
+TESTBENCH = Main()
+TESTBENCH.main()
+
