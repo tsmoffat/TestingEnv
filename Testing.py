@@ -81,7 +81,7 @@ class Main:
         targetatt = input("What attenuation do you want to achieve?")
         constants['targetphase'] = targetphase
         constants['targetatt'] = targetatt
-        result18 = check180(list180, s180,)
+        result180 = check180(list180, s180, targetphase, targetatt, phase, att)
 
         if targetphase in set90:
             print("Found it!")
@@ -145,13 +145,11 @@ class Main:
             exit()
         else:
             closest = min(list180, key=lambda x: abs(x - targetphase))
-            for row in self.s180.iter_rows:
+            for row in s180.iter_rows:
                 if row[phase].value == closest:
                     row1 = int(row[0].value)
                     att1 = Decimal(row[att].value)
-
-
-
+                    return {'row1': row1, 'att1': att1}
 
 class two_element_sum(Main):
     """For working out the two element sums"""
