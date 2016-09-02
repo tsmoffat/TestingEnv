@@ -145,7 +145,7 @@ def check225(self, s225, set225):
 
             print("The closest solution is state " + str(row1))
             print(att1).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-            return {'phase1': closest, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's180'}
+            return {'phase1': closest, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's225'}
 
 
 def checkall(self, set180, set90, set45, set225):
@@ -168,6 +168,6 @@ def checkall(self, set180, set90, set45, set225):
     sollist = [sol180, sol90, sol45, sol225]
     for item in phase:
         if item == self.targetphase:
-
+#Can't remember what I was going for here, will come back to it
 
 
