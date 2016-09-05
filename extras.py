@@ -2,12 +2,12 @@
 import decimal as dec
 
 
-def check180(self, s180, set180):
+def check180(self, set180):
     """180 degrees of magic"""
     dec.getcontext().prec = 6
     if self.targetphase in set180:
         print("Found it!")
-        for row in s180.iter_rows():
+        for row in self.s180.iter_rows():
             if row[self.phase28].value == self.targetphase:
                 row1 = int(row[0].value)
                 att1 = dec.Decimal(row[self.att28].value)
@@ -20,7 +20,7 @@ def check180(self, s180, set180):
         return {'phase1': self.targetphase, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's180'}
     else:
         closest = min(set180, key=lambda x: abs(dec.Decimal(x) - dec.Decimal(self.targetphase)))
-        for row in s180.iter_rows():
+        for row in self.s180.iter_rows():
             if row[self.phase28].value == closest:
                 row1 = int(row[0].value)
                 att1 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
@@ -34,12 +34,12 @@ def check180(self, s180, set180):
         return {'phase1': closest, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's180'}
 
 
-def check90(self, s90, set90):
+def check90(self, set90):
     """90 degrees of magic"""
     dec.getcontext().prec = 6
     if self.targetphase in set90:
         print("Found it!")
-        for row in s90.iter_rows():
+        for row in self.s90.iter_rows():
             if row[self.phase28].value == self.targetphase:
                 row1 = int(row[0].value)
                 att1 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
@@ -53,7 +53,7 @@ def check90(self, s90, set90):
 
     else:
         closest = min(set90, key=lambda x: abs(dec.Decimal(x) - dec.Decimal(self.targetphase)))
-        for row in s90.iter_rows():
+        for row in self.s90.iter_rows():
             if row[self.phase28].value == closest:
                 row1 = int(row[0].value)
                 att1 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
@@ -66,7 +66,7 @@ def check90(self, s90, set90):
         return {'phase1': closest, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's180'}
 
 
-def check45(self, s45, set45):
+def check45(self, set45):
     """45 Degrees of magic
 
         Parameters
@@ -80,7 +80,7 @@ def check45(self, s45, set45):
     dec.getcontext().prec = 6
     if self.targetphase in set45:
         print("Found it!")
-        for row in s45.iter_rows():
+        for row in self.s45.iter_rows():
             if row[self.phase28].value == self.targetphase:
                 row1 = int(row[0].value)
                 att1 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
@@ -94,7 +94,7 @@ def check45(self, s45, set45):
 
     else:
         closest = min(set45, key=lambda x: abs(dec.Decimal(x) - dec.Decimal(self.targetphase)))
-        for row in s45.iter_rows():
+        for row in self.s45.iter_rows():
             if row[self.phase28].value == closest:
                 row1 = int(row[0].value)
                 att1 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
@@ -107,7 +107,7 @@ def check45(self, s45, set45):
         return {'phase1': closest, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's180'}
 
 
-def check225(self, s225, set225):
+def check225(self, set225):
     """22.5 degrees of magic
 
     Parameters
@@ -121,7 +121,7 @@ def check225(self, s225, set225):
     dec.getcontext().prec = 6
     if self.targetphase in set225:
         print("Found it!")
-        for row in s225.iter_rows():
+        for row in self.s225.iter_rows():
             if row[self.phase28].value == self.targetphase:
                 row1 = int(row[0].value)
                 att1 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
@@ -135,7 +135,7 @@ def check225(self, s225, set225):
 
     else:
         closest = min(set225, key=lambda x: abs(dec.Decimal(x) - dec.Decimal(self.targetphase)))
-        for row in s225.iter_rows():
+        for row in self.s225.iter_rows():
             if row[self.phase28].value == closest:
                 row1 = int(row[0].value)
                 att1 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
@@ -160,14 +160,15 @@ def checkall(self, set180, set90, set45, set225):
     """
 
     dec.getcontext().prec = 6
-    sol180 = check180(self, self.s180, set180)
-    sol90 = check90(self, self.s90, set90)
-    sol45 = check45(self, self.s45, set45)
-    sol225 = check225(self, self.s225, set225)
+    sol180 = check180(self, set180)
+    sol90 = check90(self, set90)
+    sol45 = check45(self, set45)
+    sol225 = check225(self, set225)
 
     sollist = [sol180, sol90, sol45, sol225]
-    for item in phase:
-        if item == self.targetphase:
-#Can't remember what I was going for here, will come back to it
+    for phase1 in sollist:
+    #Can't remember what I was going for here, will come back to it
 
+        if phase1 == self.targetphase:
+            return
 

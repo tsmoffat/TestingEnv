@@ -1,0 +1,7 @@
+loop function- table - 256x128
+
+if few solutions choose one with lowest loss
+
+find best few
+
+best variation across frequency
