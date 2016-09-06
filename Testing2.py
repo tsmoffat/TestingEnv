@@ -2,6 +2,9 @@
 from decimal import Decimal, getcontext
 import openpyxl as xl
 import extras as ex
+import TwoPhase as tp
+import ThreePhase as thp
+import FourPhase as fp
 
 
 class Main:
@@ -61,6 +64,13 @@ class Main:
         set225 = set(list225)
 
         bestresult = ex.checkall(self, set180, set90, set45, set225)
+        print(bestresult)
+        bestresult2 = tp.checkall(self, set180, set90, set45, set225)
+        print(bestresult2)
+        bestresult3 = thp.checkall(self, set180, set90, set45, set225)
+        print(bestresult3)
+        bestresult4 = fp.check(self, set180, set90, set45, set225)
+        print(bestresult4)
 
 
 TESTBENCH = Main()
