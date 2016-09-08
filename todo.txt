@@ -1,7 +1,3 @@
-loop function- table - 256x128
-
-if few solutions choose one with lowest loss
-
-find best few
-
-best variation across frequency
+version https://git-lfs.github.com/spec/v1
+oid sha256:76c70f39d7bf10757fd26b444ad56d6a5a34f1b3161c3f77d80b7e28a2814d62
+size 130

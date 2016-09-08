@@ -17,7 +17,7 @@ def check180(self, set180):
 
         print("Optimal solution found, it is state " + str(row1))
         print(att1)
-        return {'phase1': self.targetphase, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's180'}
+        return {'phase1': self.targetphase, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's180', 'totalphase': att1, 'total': self.targetphase}
     else:
         closest = min(set180, key=lambda x: abs(dec.Decimal(x) - dec.Decimal(self.targetphase)))
         for row in self.s180.iter_rows():
@@ -32,7 +32,7 @@ def check180(self, set180):
 
         print("The closest current solution is " + str(row1))
         print(att1)
-        return {'phase1': closestround, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's180'}
+        return {'phase1': closestround, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's180', 'totalphase': att1, 'total': closestround}
 
 
 def check90(self, set90):
@@ -50,7 +50,7 @@ def check90(self, set90):
 
         print("Optimal solution found, it is state " + str(row1))
         print(att1).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-        return {'phase1': self.targetphase, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's90'}
+        return {'phase1': self.targetphase, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's90', 'totalphase': att1, 'total': self.targetphase}
 
     else:
         closest = min(set90, key=lambda x: abs(dec.Decimal(x) - dec.Decimal(self.targetphase)))
@@ -65,7 +65,7 @@ def check90(self, set90):
 
         print("The closest current solution is state " + str(row1))
         print(att1)
-        return {'phase1': closestround, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's90'}
+        return {'phase1': closestround, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's90', 'totalphase': att1, 'total': closestround}
 
 
 def check45(self, set45):
@@ -92,7 +92,7 @@ def check45(self, set45):
 
         print("Optimal solution found, it is state " + str(row1))
         print(att1).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-        return {'phase1': self.targetphase, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's45'}
+        return {'phase1': self.targetphase, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's45', 'totalphase': att1, 'total': self.targetphase}
 
     else:
         closest = min(set45, key=lambda x: abs(dec.Decimal(x) - dec.Decimal(self.targetphase)))
@@ -107,7 +107,7 @@ def check45(self, set45):
 
         print("The closest current solution is state " + str(row1))
         print(att1)
-        return {'phase1': closestround, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's45'}
+        return {'phase1': closestround, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's45', 'totalphase': att1, 'total': closestround}
 
 
 def check225(self, set225):
@@ -134,7 +134,7 @@ def check225(self, set225):
 
         print("Optimal solution found, it is state " + str(row1))
         print(att1).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-        return {'phase1': self.targetphase, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's225'}
+        return {'phase1': self.targetphase, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's225', 'totalphase': att1, 'total': self.targetphase}
 
     else:
         closest = min(set225, key=lambda x: abs(dec.Decimal(x) - dec.Decimal(self.targetphase)))
@@ -149,7 +149,7 @@ def check225(self, set225):
 
         print("The closest solution is state " + str(row1))
         print(att1)
-        return {'phase1': closestround, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's225'}
+        return {'phase1': closestround, 'row1': row1, 'att1': att1, 'phasediff': phasediff, 'source': 's225', 'totalphase': att1, 'total': closestround}
 
 
 def checkall(self, set180, set90, set45, set225):
@@ -194,3 +194,25 @@ def checkall(self, set180, set90, set45, set225):
             return sol225
         else:
             return None
+
+
+def mostaccurate(self, bestresult, bestresult2, bestresult3, bestresult4, sollist):
+    bestsol = min(sollist, key=lambda x: abs(dec.Decimal(x) - dec.Decimal(self.targetphase)))
+    if bestsol == bestresult['total']:
+        print("The best result overall was ")
+        print(bestresult)
+        return bestresult
+    elif bestsol == bestresult2['total']:
+        print("The best result overall was ")
+        print(bestresult2)
+        return bestresult2
+    elif bestsol == bestresult3['total']:
+        print("The best result overall was ")
+        print(bestresult3)
+        return bestresult3
+    elif bestsol == bestresult4['total']:
+        print("The best result overall was ")
+        print(bestresult4)
+        return bestresult4
+    else:
+        return None
