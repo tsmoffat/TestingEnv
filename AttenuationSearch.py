@@ -2,21 +2,17 @@
 import decimal as dec
 
 
-def attenuationsearch(self, bestphase):
+def attenuationsearch(self):
     satt = self.workbook.get_sheet_by_name("DSA")
     listatt = []
     for row in satt.iter_rows(row_offset=2):
         if row[self.dsas2128].value is not None:
             listatt.append(row[self.dsas2128].value)
-    if bestphase['totalatt'] > 0:
-        targetphase = dec.Decimal(self.targetatt) + dec.Decimal(bestphase['totalatt'])
-    else:
-        targetphase = dec.Decimal(self.targetatt) - dec.Decimal(bestphase['totalatt'])
-    if targetphase in listatt:
+    if self.targetphase in listatt:
         for row in satt.iter_rows():
-            if row[self.dsas2128].value == targetphase:
+            if row[self.dsas2128].value == self.targetphase:
                 row28 = row[self.dsastate28].value
-                att2128 = targetphase.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                att2128 = self.targetphase.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                 att2124 = dec.Decimal(row[self.dsas2124].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                 att2132 = dec.Decimal(row[self.dsas2132].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
 

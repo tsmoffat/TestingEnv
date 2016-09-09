@@ -209,6 +209,9 @@
 	"selected_group": 0,
 	"settings":
 	{
+		"vintage":
+		{
+		}
 	},
 	"show_minimap": true,
 	"show_open_files": true,

@@ -7,7 +7,6 @@ def check(self, set180, set90, set45, set225):
     combined = set(map(str.rstrip, open('1809045225.txt')))
     closest = min(combined, key=lambda x: abs(dec.Decimal(x) - dec.Decimal(self.targetphase)))
     closest = dec.Decimal(closest)
-    print(closest)
     del combined
     for i in set180:
         for j in set90:
@@ -47,7 +46,5 @@ def check(self, set180, set90, set45, set225):
                                 phasehigh4 = dec.Decimal(row[self.phase32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                                 phasediff4 = phasehigh4 - phaselow4
 
-                        print("The closest solution is: ")
-                        print(row1, row2, row3, row4)
                         totalatt = att1 + att2 + att3 + att4
                         return {'phase1': i.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row1': row1, 'att1': att1, 'phasediff1': phasediff1, 'source1': 's180', 'phase2': j.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row2': row2, 'att2': att2, 'phasediff2': phasediff2, 'source2': 's90', 'phase3': k.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row3': row3, 'att3': att3, 'phasediff3': phasediff3, 'source3': 's45', 'phase4': l.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row4': row4, 'att4': att4, 'phasediff4': phasediff4, 'source4': 's225', 'total': total.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'totalatt': totalatt.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)}

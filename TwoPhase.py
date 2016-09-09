@@ -7,7 +7,6 @@ def check1(self, set180, set90):
     combined = set(map(str.rstrip, open('18090.txt')))
     closest = min(combined, key=lambda x: abs(dec.Decimal(x) - dec.Decimal(self.targetphase)))
     closest = dec.Decimal(closest)
-    print(closest)
     del combined
     for i in set180:
         for j in set90:
@@ -29,12 +28,8 @@ def check1(self, set180, set90):
                         phasehigh2 = dec.Decimal(row[self.att32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                         phasediff2 = phasehigh2 - phaselow2
 
-                print("The closest solution is state " + str(row1) + " " + str(row2))
-                print(att1)
-                print(att2)
                 totalatt = att1 + att2
-                print(total)
-                return {'phase1': i.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row1': row1, 'att1': att1, 'phasediff1': phasediff1, 'source1': 's180', 'phase2': j.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row2': row2, 'att2': att2, 'phasediff2': phasediff2, 'source2': 's90', 'total': dec.Decimal(total), 'totalatt': totalatt.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP) }
+                return{'phase1': i.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row1': row1, 'att1': att1, 'phasediff1': phasediff1, 'source1': 's180', 'phase2': j.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row2': row2, 'att2': att2, 'phasediff2': phasediff2, 'source2': 's90', 'total': dec.Decimal(total), 'totalatt': totalatt.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)}
 
 
 def check2(self, set180, set45):
@@ -62,11 +57,8 @@ def check2(self, set180, set45):
                         phasehigh2 = dec.Decimal(row[self.phase32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                         phasediff2 = phasehigh2 - phaselow2
 
-                print("The closest solution is state " + str(row1) + " " + str(row2))
-                print(att1)
-                print(att2)
                 totalatt = att1 + att2
-                return {'phase1': i.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row1': row1, 'att1': att1, 'phasediff1': phasediff1, 'source1': 's180', 'phase2': j.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row2': row2, 'att2': att2, 'phasediff2': phasediff2, 'source2': 's45', 'total': total, 'totalatt': totalatt.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP) }
+                return{'phase1': i.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row1': row1, 'att1': att1, 'phasediff1': phasediff1, 'source1': 's180', 'phase2': j.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row2': row2, 'att2': att2, 'phasediff2': phasediff2, 'source2': 's45', 'total': total, 'totalatt': totalatt.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)}
 
 
 def check3(self, set180, set225):
@@ -94,11 +86,8 @@ def check3(self, set180, set225):
                         phasehigh2 = dec.Decimal(row[self.phase32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                         phasediff2 = phasehigh2 - phaselow2
 
-                print("The closest solution is state " + str(row1) + " " + str(row2))
-                print(att1)
-                print(att2)
                 totalatt = att1 + att2
-                return {'phase1': i.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row1': row1, 'att1': att1, 'phasediff1': phasediff1, 'source1': 's180', 'phase2': j.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row2': row2, 'att2': att2, 'phasediff2': phasediff2, 'source2': 's225', 'total': total, 'totalatt': totalatt.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)}
+                return{'phase1': i.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row1': row1, 'att1': att1, 'phasediff1': phasediff1, 'source1': 's180', 'phase2': j.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row2': row2, 'att2': att2, 'phasediff2': phasediff2, 'source2': 's225', 'total': total, 'totalatt': totalatt.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)}
 
 
 def check4(self, set90, set45):
@@ -126,11 +115,8 @@ def check4(self, set90, set45):
                         phasehigh2 = dec.Decimal(row[self.phase32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                         phasediff2 = phasehigh2 - phaselow2
 
-                print("The closest solution is state " + str(row1) + " " + str(row2))
-                print(att1)
-                print(att2)
                 totalatt = att1 + att2
-                return {'phase1': i.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row1': row1, 'att1': att1, 'phasediff1': phasediff1, 'source1': 's90', 'phase2': j.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row2': row2, 'att2': att2, 'phasediff2': phasediff2, 'source2': 's45', 'total': total, 'totalatt': totalatt.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)}
+                return{'phase1': i.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row1': row1, 'att1': att1, 'phasediff1': phasediff1, 'source1': 's90', 'phase2': j.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row2': row2, 'att2': att2, 'phasediff2': phasediff2, 'source2': 's45', 'total': total, 'totalatt': totalatt.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)}
 
 
 def check5(self, set90, set225):
@@ -158,9 +144,6 @@ def check5(self, set90, set225):
                         phasehigh2 = dec.Decimal(row[self.phase32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                         phasediff2 = phasehigh2 - phaselow2
 
-                print("The closest solution is state " + str(row1) + " " + str(row2))
-                print(att1)
-                print(att2)
                 totalatt = att1 + att2
                 return {'phase1': i.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row1': row1, 'att1': att1, 'phasediff1': phasediff1, 'source1': 's90', 'phase2': j.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row2': row2, 'att2': att2, 'phasediff2': phasediff2, 'source2': 's225', 'total': total, 'totalatt': totalatt.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)}
 
@@ -190,9 +173,6 @@ def check6(self, set45, set225):
                         phasehigh2 = dec.Decimal(row[self.phase32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                         phasediff2 = phasehigh2 - phaselow2
 
-                print("The closest solution is state " + str(row1) + " " + str(row2))
-                print(att1)
-                print(att2)
                 totalatt = att1 + att2
                 return {'phase1': i.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row1': row1, 'att1': att1, 'phasediff1': phasediff1, 'source1': 's45', 'phase2': j.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP), 'row2': row2, 'att2': att2, 'phasediff2': phasediff2, 'source2': 's225', 'total': total, 'totalatt': totalatt.quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)}
 
@@ -201,7 +181,6 @@ def checkall(self, set180, set90, set45, set225):
     dec.getcontext().prec = 6
     sollist = []
     sol1 = check1(self, set180, set90)
-    print(sol1['total'])
     sollist.append(sol1["total"])
     sol2 = check2(self, set180, set45)
     sollist.append(sol2['total'])
