@@ -8,6 +8,7 @@ import FourPhase as fp
 import AttenuationSearch as ats
 import lookuptablegenerator as lutg
 import os
+import minphasevariation as mpv
 
 
 class Main:
@@ -49,6 +50,8 @@ class Main:
         consent = input(
             "Would you like to calculate a specific (V)alue or generate a lookup (T)able?")
         if consent == 'V':
+            minvarchoice = input(
+                "Would you like to find the most (E)fficient value or the value with least (D)ifference across frequencies?")
             self.targetphase = input(
                 "Please enter the desired phase shift for 28GHz")
             self.targetatt = input(
@@ -77,21 +80,27 @@ class Main:
                 if row[self.phase28].value is not None:
                     list225.append(dec.Decimal(row[self.phase28].value))
             set225 = set(list225)
-
-            bestresult = ex.checkall(self, set180, set90, set45, set225)
-            print(bestresult)
-            bestresult2 = tp.checkall(self, set180, set90, set45, set225)
-            print(bestresult2)
-            bestresult3 = thp.checkall(self, set180, set90, set45, set225)
-            print(bestresult3)
-            bestresult4 = fp.check(self, set180, set90, set45, set225)
-            print(bestresult4)
-            sollist = [bestresult['total'], bestresult2['total'],
-                       bestresult3['total'], bestresult4['total']]
-            bestphase = ex.mostaccurate(
-                self, bestresult, bestresult2, bestresult3, bestresult4, sollist)
-            bestatt = ats.attenuationsearch(self)
-            print(bestatt)
+            if minvarchoice == "D":
+                self.k = input("How many values would you like to search?")
+                minphase = mpv.minvariation(self, set180, set90, set45, set225)
+                print(minphase)
+            elif minvarchoice == "E":
+                bestresult = ex.checkall(self, set180, set90, set45, set225)
+                print(bestresult)
+                bestresult2 = tp.checkall(self, set180, set90, set45, set225)
+                print(bestresult2)
+                bestresult3 = thp.checkall(self, set180, set90, set45, set225)
+                print(bestresult3)
+                bestresult4 = fp.check(self, set180, set90, set45, set225)
+                print(bestresult4)
+                sollist = [bestresult['total'], bestresult2['total'],
+                           bestresult3['total'], bestresult4['total']]
+                bestphase = ex.mostaccurate(
+                    self, bestresult, bestresult2, bestresult3, bestresult4, sollist)
+                bestatt = ats.attenuationsearch(self)
+                print(bestatt)
+            else:
+                print("Not a valid option")
         elif consent == 'T':
             option = input("Generate a table for (A)ttenuation or (P)hase?")
             if option == "A":
