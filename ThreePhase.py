@@ -1,11 +1,15 @@
-"""Test three phase solutions"""
+"""Test three phase solutions."""
 import decimal as dec
+import os
 
 
 def check1(self, set180, set90, set45):
+    """Check 180, 90 and 45 arrays for solution."""
     dec.getcontext().prec = 6
-    combined = set(map(str.rstrip, open('1809045.txt')))
-    closest = min(combined, key=lambda x: abs(dec.Decimal(x) - dec.Decimal(self.targetphase)))
+    combined = set(map(str.rstrip, open(
+        (os.path.join(os.path.dirname(__file__), '1809045.txt')))))
+    closest = min(combined, key=lambda x: abs(
+        dec.Decimal(x) - dec.Decimal(self.targetphase)))
     closest = dec.Decimal(closest)
     for i in set180:
         for j in set90:
@@ -15,25 +19,34 @@ def check1(self, set180, set90, set45):
                     for row in self.s180:
                         if row[self.phase28].value == i:
                             row1 = int(row[0].value)
-                            att1 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phaselow1 = dec.Decimal(row[self.phase24].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phasehigh1 = dec.Decimal(row[self.phase32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            att1 = dec.Decimal(row[self.att28].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phaselow1 = dec.Decimal(row[self.phase24].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phasehigh1 = dec.Decimal(row[self.phase32].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                             phasediff1 = phasehigh1 - phaselow1
 
                     for row in self.s90:
                         if row[self.phase28].value == j:
                             row2 = int(row[0].value)
-                            att2 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phaselow2 = dec.Decimal(row[self.phase24].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phasehigh2 = dec.Decimal(row[self.phase32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            att2 = dec.Decimal(row[self.att28].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phaselow2 = dec.Decimal(row[self.phase24].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phasehigh2 = dec.Decimal(row[self.phase32].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                             phasediff2 = phasehigh2 - phaselow2
 
                     for row in self.s45:
                         if row[self.phase28].value == k:
                             row3 = int(row[0].value)
-                            att3 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phaselow3 = dec.Decimal(row[self.att24].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phasehigh3 = dec.Decimal(row[self.att32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            att3 = dec.Decimal(row[self.att28].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phaselow3 = dec.Decimal(row[self.att24].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phasehigh3 = dec.Decimal(row[self.att32].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                             phasediff3 = phasehigh3 - phaselow3
 
                     totalatt = att1 + att2 + att3
@@ -41,9 +54,12 @@ def check1(self, set180, set90, set45):
 
 
 def check2(self, set180, set90, set225):
+    """Check 180, 90 and 22.5 arrays for solution."""
     dec.getcontext().prec = 6
-    combined = set(map(str.rstrip, open('18090225.txt')))
-    closest = min(combined, key=lambda x: abs(dec.Decimal(x) - dec.Decimal(self.targetphase)))
+    combined = set(map(str.rstrip, open(
+        (os.path.join(os.path.dirname(__file__), '18090225.txt')))))
+    closest = min(combined, key=lambda x: abs(
+        dec.Decimal(x) - dec.Decimal(self.targetphase)))
     closest = dec.Decimal(closest)
     for i in set180:
         for j in set90:
@@ -53,25 +69,34 @@ def check2(self, set180, set90, set225):
                     for row in self.s180:
                         if row[self.phase28].value == i:
                             row1 = int(row[0].value)
-                            att1 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phaselow1 = dec.Decimal(row[self.phase24].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phasehigh1 = dec.Decimal(row[self.phase32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            att1 = dec.Decimal(row[self.att28].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phaselow1 = dec.Decimal(row[self.phase24].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phasehigh1 = dec.Decimal(row[self.phase32].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                             phasediff1 = phasehigh1 - phaselow1
 
                     for row in self.s90:
                         if row[self.phase28].value == j:
                             row2 = int(row[0].value)
-                            att2 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phaselow2 = dec.Decimal(row[self.phase24].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phasehigh2 = dec.Decimal(row[self.phase32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            att2 = dec.Decimal(row[self.att28].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phaselow2 = dec.Decimal(row[self.phase24].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phasehigh2 = dec.Decimal(row[self.phase32].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                             phasediff2 = phasehigh2 - phaselow2
 
                     for row in self.s225:
                         if row[self.phase28].value == k:
                             row3 = int(row[0].value)
-                            att3 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phaselow3 = dec.Decimal(row[self.phase24].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phasehigh3 = dec.Decimal(row[self.phase32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            att3 = dec.Decimal(row[self.att28].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phaselow3 = dec.Decimal(row[self.phase24].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phasehigh3 = dec.Decimal(row[self.phase32].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                             phasediff3 = phasehigh3 - phaselow3
 
                     totalatt = att1 + att2 + att3
@@ -79,9 +104,12 @@ def check2(self, set180, set90, set225):
 
 
 def check3(self, set180, set45, set225):
+    """Check 180, 45 and 22.5 arrays for solution."""
     dec.getcontext().prec = 6
-    combined = set(map(str.rstrip, open('18045225.txt')))
-    closest = min(combined, key=lambda x: abs(dec.Decimal(x) - dec.Decimal(self.targetphase)))
+    combined = set(map(str.rstrip, open(
+        (os.path.join(os.path.dirname(__file__), '18045225.txt')))))
+    closest = min(combined, key=lambda x: abs(
+        dec.Decimal(x) - dec.Decimal(self.targetphase)))
     closest = dec.Decimal(closest)
     for i in set180:
         for j in set45:
@@ -91,25 +119,34 @@ def check3(self, set180, set45, set225):
                     for row in self.s180:
                         if row[self.phase28].value == i:
                             row1 = int(row[0].value)
-                            att1 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phaselow1 = dec.Decimal(row[self.phase24].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phasehigh1 = dec.Decimal(row[self.phase32].value).  quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            att1 = dec.Decimal(row[self.att28].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phaselow1 = dec.Decimal(row[self.phase24].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phasehigh1 = dec.Decimal(row[self.phase32].value).  quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                             phasediff1 = phasehigh1 - phaselow1
 
                     for row in self.s45:
                         if row[self.phase28].value == j:
                             row2 = int(row[0].value)
-                            att2 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phaselow2 = dec.Decimal(row[self.att24].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phasehigh2 = dec.Decimal(row[self.att32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            att2 = dec.Decimal(row[self.att28].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phaselow2 = dec.Decimal(row[self.att24].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phasehigh2 = dec.Decimal(row[self.att32].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                             phasediff2 = phasehigh2 - phaselow2
 
                     for row in self.s225:
                         if row[self.phase28].value == k:
                             row3 = int(row[0].value)
-                            att3 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phaselow3 = dec.Decimal(row[self.phase24].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phasehigh3 = dec.Decimal(row[self.phase32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            att3 = dec.Decimal(row[self.att28].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phaselow3 = dec.Decimal(row[self.phase24].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phasehigh3 = dec.Decimal(row[self.phase32].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                             phasediff3 = phasehigh3 - phaselow3
 
                     totalatt = att1 + att2 + att3
@@ -117,9 +154,12 @@ def check3(self, set180, set45, set225):
 
 
 def check4(self, set90, set45, set225):
+    """Check 90, 45 and 22.5 arrays for solution."""
     dec.getcontext().prec = 6
-    combined = set(map(str.rstrip, open('9045225.txt')))
-    closest = min(combined, key=lambda x: abs(dec.Decimal(x) - dec.Decimal(self.targetphase)))
+    combined = set(map(str.rstrip, open(
+        (os.path.join(os.path.dirname(__file__), '9045225.txt')))))
+    closest = min(combined, key=lambda x: abs(
+        dec.Decimal(x) - dec.Decimal(self.targetphase)))
     closest = dec.Decimal(closest)
     for i in set90:
         for j in set45:
@@ -129,25 +169,34 @@ def check4(self, set90, set45, set225):
                     for row in self.s90:
                         if row[self.phase28].value == i:
                             row1 = int(row[0].value)
-                            att1 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phaselow1 = dec.Decimal(row[self.phase24].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phasehigh1 = dec.Decimal(row[self.att32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            att1 = dec.Decimal(row[self.att28].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phaselow1 = dec.Decimal(row[self.phase24].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phasehigh1 = dec.Decimal(row[self.att32].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                             phasediff1 = phasehigh1 - phaselow1
 
                     for row in self.s45:
                         if row[self.phase28].value == j:
                             row2 = int(row[0].value)
-                            att2 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phaselow2 = dec.Decimal(row[self.att24].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phasehigh2 = dec.Decimal(row[self.att32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            att2 = dec.Decimal(row[self.att28].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phaselow2 = dec.Decimal(row[self.att24].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phasehigh2 = dec.Decimal(row[self.att32].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                             phasediff2 = phasehigh2 - phaselow2
 
                     for row in self.s225:
                         if row[self.phase28].value == k:
                             row3 = int(row[0].value)
-                            att3 = dec.Decimal(row[self.att28].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phaselow3 = dec.Decimal(row[self.phase24].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
-                            phasehigh3 = dec.Decimal(row[self.phase32].value).quantize(dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            att3 = dec.Decimal(row[self.att28].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phaselow3 = dec.Decimal(row[self.phase24].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
+                            phasehigh3 = dec.Decimal(row[self.phase32].value).quantize(
+                                dec.Decimal('.001'), rounding=dec.ROUND_HALF_UP)
                             phasediff3 = phasehigh3 - phaselow3
 
                     totalatt = att1 + att2 + att3
@@ -155,6 +204,7 @@ def check4(self, set90, set45, set225):
 
 
 def checkall(self, set180, set90, set45, set225):
+    """Check for best three phase solution."""
     dec.getcontext().prec = 6
     sol1 = check1(self, set180, set90, set45)
     sol2 = check2(self, set180, set90, set225)
@@ -171,7 +221,8 @@ def checkall(self, set180, set90, set45, set225):
     elif sol4['total'] == self.targetphase:
         return sol4
     else:
-        closest = min(sollist, key=lambda x: abs(dec.Decimal(x) - dec.Decimal(self.targetphase)))
+        closest = min(sollist, key=lambda x: abs(
+            dec.Decimal(x) - dec.Decimal(self.targetphase)))
         if sol1['total'] == closest:
             return sol1
         elif sol2['total'] == closest:

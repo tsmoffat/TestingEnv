@@ -1,4 +1,4 @@
-"""Module to work on more ideas for MPAC tuning"""
+"""Module to work on more ideas for MPAC tuning."""
 import decimal as dec
 import openpyxl as xl
 import extras as ex
@@ -7,13 +7,16 @@ import ThreePhase as thp
 import FourPhase as fp
 import AttenuationSearch as ats
 import lookuptablegenerator as lutg
+import os
 
 
 class Main:
-    """Where the real magic happens"""
+    """Where the real magic happens."""
 
     def __init__(self):
+        """Initialise class."""
         print("Initialising")
+        print("Make sure when handing the program over that paths to directories aren't hard coded")
         self.phase24 = 1
         self.phase28 = 2
         self.phase32 = 3
@@ -22,25 +25,34 @@ class Main:
         self.att32 = 6
         self.dsastate24 = 0
         self.dsas2124 = 2
-        self.dsastate28 = 5
-        self.dsas2128 = 7
-        self.dsastate32 = 10
-        self.dsas2132 = 12
+        self.dsaphase2124 = 4
+        self.dsastate28 = 6
+        self.dsas2128 = 8
+        self.dsaphase2128 = 10
+        self.dsastate32 = 12
+        self.dsas2132 = 14
+        self.dsaphase2132 = 16
         self.targetphase = 0
         self.targetatt = 0
-        self.workbook = xl.load_workbook("Five RF Sections - Relative Effects.xlsx")
+        self.workbook = xl.load_workbook(os.path.join(
+            os.path.dirname(__file__), 'source.xlsx'))
         self.s180 = self.workbook.get_sheet_by_name('180')
         self.s90 = self.workbook.get_sheet_by_name('90')
         self.s45 = self.workbook.get_sheet_by_name('45')
         self.s225 = self.workbook.get_sheet_by_name('22.5')
+        self.dsa = self.workbook.get_sheet_by_name('DSA')
+        self.k = 0
 
     def main(self):
-        """More magic"""
+        """More magic."""
         dec.getcontext().prec = 6
-        consent = input("Would you like to calculate a specific value or generate a lookup table? Input value or table")
-        if consent == 'value':
-            self.targetphase = input("Please enter the desired phase shift for 28GHz")
-            self.targetatt = input("Please enter the desired attenuation for 28GHz")
+        consent = input(
+            "Would you like to calculate a specific (V)alue or generate a lookup (T)able?")
+        if consent == 'V':
+            self.targetphase = input(
+                "Please enter the desired phase shift for 28GHz")
+            self.targetatt = input(
+                "Please enter the desired attenuation for 28GHz")
 
             list180 = []
             for row in self.s180.iter_rows(row_offset=2):
@@ -74,14 +86,20 @@ class Main:
             print(bestresult3)
             bestresult4 = fp.check(self, set180, set90, set45, set225)
             print(bestresult4)
-            sollist = [bestresult['total'], bestresult2['total'], bestresult3['total'], bestresult4['total']]
-            bestphase = ex.mostaccurate(self, bestresult, bestresult2, bestresult3, bestresult4, sollist)
-            print(bestphase)
+            sollist = [bestresult['total'], bestresult2['total'],
+                       bestresult3['total'], bestresult4['total']]
+            bestphase = ex.mostaccurate(
+                self, bestresult, bestresult2, bestresult3, bestresult4, sollist)
             bestatt = ats.attenuationsearch(self)
             print(bestatt)
-        elif consent == 'table':
-            lutg.tablegen(self)
-
+        elif consent == 'T':
+            option = input("Generate a table for (A)ttenuation or (P)hase?")
+            if option == "A":
+                lutg.atttablegen(self)
+            elif option == "P":
+                lutg.tablegen(self)
+            else:
+                print("That is not an option")
 
 TESTBENCH = Main()
 TESTBENCH.main()
