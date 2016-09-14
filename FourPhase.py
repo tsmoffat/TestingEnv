@@ -3,15 +3,21 @@ import decimal as dec
 import os
 
 
-def check(self, set180, set90, set45, set225):
-    """Check to find the most accurate four phase solution."""
-    dec.getcontext().prec = 6
+def closest_finder(self):
+    """Find the closest value to a given value."""
     combined = set(map(str.rstrip, open(
         (os.path.join(os.path.dirname(__file__), '1809045225.txt')))))
     closest = min(combined, key=lambda x: abs(
         dec.Decimal(x) - dec.Decimal(self.targetphase)))
     closest = dec.Decimal(closest)
+    print(closest)
+    return closest
     del combined
+
+
+def check(self, set180, set90, set45, set225, closest):
+    """Check to find the most accurate four phase solution."""
+    dec.getcontext().prec = 6
     for i in set180:
         for j in set90:
             for k in set45:

@@ -38,7 +38,7 @@ def tablegen(self):
                "22.5 Used", "180 Setting", "90 Setting", "45 Setting", "22.5 Setting"]
     table = []
     for i in range(1, 65):
-        self.targetphase = (360 / 64) * i
+        self.targetphase = (-360 / 64) * i
         bestresult = ex.checkall(self, set180, set90, set45, set225)
         bestresult2 = twp.checkall(self, set180, set90, set45, set225)
         bestresult3 = thp.checkall(self, set180, set90, set45, set225)
@@ -47,69 +47,73 @@ def tablegen(self):
                    bestresult3['total'], bestresult4['total']]
         bestphase = ex.mostaccurate(
             self, bestresult, bestresult2, bestresult3, bestresult4, sollist)
-        if bestphase['source1'] == 's180':
-            s180present = 1
-        else:
-            s180present = 0
-        if bestphase['source1'] == 's90':
-            s90present = 1
-        elif bestphase['source2'] == 's90':
-            s90present = 2
-        else:
-            s90present = 0
-        if bestphase['source1'] == 's45':
-            s45present = 1
-        elif bestphase['source2'] == 's45':
-            s45present = 2
-        elif bestphase['source3'] == 's45':
-            s45present = 3
-        else:
-            s45present = 0
-        if bestphase['source1'] == 's225':
-            s225present = 1
-        elif bestphase['source2'] == 's225':
-            s225present = 2
-        elif bestphase['source3'] == 's225':
-            s225present = 3
-        elif bestphase['source4'] == 's225':
-            s225present = 4
-        else:
-            s225present = 0
+        s180present = 0
+        s90present = 0
+        s45present = 0
+        s225present = 0
+        print(bestphase)
+        if 'source1' in bestphase:
+            if bestphase['source1'] == 's180':
+                s180present = 1
+            elif bestphase['source1'] == 's90':
+                s90present = 1
+            elif bestphase['source1'] == 's45':
+                s45present = 1
+            elif bestphase['source1'] == 's225':
+                s225present = 1
 
+        if 'source2' in bestphase:
+            if bestphase['source2'] == 's90':
+                s90present = 2
+            elif bestphase['source2'] == 's45':
+                s45present = 2
+            elif bestphase['source2'] == 's225':
+                s225present = 2
+
+        if 'source3' in bestphase:
+            if bestphase['source3'] == 's45':
+                s45present = 3
+            elif bestphase['source3'] == 's225':
+                s225present = 3
+
+        if 'source4' in bestphase:
+            if bestphase['source4'] == 's225':
+                s225present = 4
+        print(s180present, s90present, s45present, s225present)
         if s180present == 1:
-            s180setting = '{0:02b}'.format(bestresult['row1'])
+            s180setting = '{0:02b}'.format(bestphase['row1'])
         else:
             s180setting = '{0:02b}'.format(2)
 
         if s90present == 1:
-            s90setting = '{0:06b}'.format(bestresult['row1'])
+            s90setting = '{0:06b}'.format(bestphase['row1'])
         elif s90present == 2:
-            s90setting = '{0:06b}'.format(bestresult['row2'])
+            s90setting = '{0:06b}'.format(bestphase['row2'])
             s90present = 1
         else:
             s90setting = '{0:06b}'.format(32)
 
         if s45present == 1:
-            s45setting = '{0:09b}'.format(bestresult['row1'])
+            s45setting = '{0:09b}'.format(bestphase['row1'])
         elif s45present == 2:
-            s45setting = '{0:09b}'.format(bestresult['row2'])
+            s45setting = '{0:09b}'.format(bestphase['row2'])
             s45present = 1
         elif s45present == 3:
-            s45setting = '{0:09b}'.format(bestresult['row3'])
+            s45setting = '{0:09b}'.format(bestphase['row3'])
             s45present = 1
         else:
             s45setting = '{0:09b}'.format(256)
 
         if s225present == 1:
-            s45setting = '{0:09b}'.format(bestresult['row1'])
+            s225setting = '{0:09b}'.format(bestphase['row1'])
         elif s225present == 2:
-            s225setting = '{0:09b}'.format(bestresult['row2'])
+            s225setting = '{0:09b}'.format(bestphase['row2'])
             s225present = 1
         elif s225present == 3:
-            s225setting = '{0:09b}'.format(bestresult['row3'])
+            s225setting = '{0:09b}'.format(bestphase['row3'])
             s225present = 1
         elif s225present == 4:
-            s225setting = '{0:09b}'.format(bestresult['row4'])
+            s225setting = '{0:09b}'.format(bestphase['row4'])
             s225present = 1
         else:
             s225setting = '{0:09b}'.format(256)

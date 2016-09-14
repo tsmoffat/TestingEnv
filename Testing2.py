@@ -9,6 +9,8 @@ import AttenuationSearch as ats
 import lookuptablegenerator as lutg
 import os
 import minphasevariation as mpv
+import mininsertloss as mil
+import minphaseatt as mpa
 
 
 class Main:
@@ -51,7 +53,7 @@ class Main:
             "Would you like to calculate a specific (V)alue or generate a lookup (T)able?")
         if consent == 'V':
             minvarchoice = input(
-                "Would you like to find the most (E)fficient value or the value with least (D)ifference across frequencies?")
+                "Would you like to find the most (E)fficient value, the value with least (D)ifference across frequencies, the value with the minimum (I)nsertion loss or the attenuation mith minimum (A)mplitude variation?")
             self.targetphase = input(
                 "Please enter the desired phase shift for 28GHz")
             self.targetatt = input(
@@ -91,14 +93,27 @@ class Main:
                 print(bestresult2)
                 bestresult3 = thp.checkall(self, set180, set90, set45, set225)
                 print(bestresult3)
-                bestresult4 = fp.check(self, set180, set90, set45, set225)
+                closest = fp.closest_finder(self)
+                bestresult4 = fp.check(
+                    self, set180, set90, set45, set225, closest)
                 print(bestresult4)
                 sollist = [bestresult['total'], bestresult2['total'],
                            bestresult3['total'], bestresult4['total']]
                 bestphase = ex.mostaccurate(
                     self, bestresult, bestresult2, bestresult3, bestresult4, sollist)
-                bestatt = ats.attenuationsearch(self)
+                attlist = ats.attlist(self)
+                closest = ats.closest(self, attlist)
+                bestatt = ats.attenuationsearch(self, attlist, closest)
                 print(bestatt)
+            elif minvarchoice == "I":
+                self.k = input("How many values would you like to search?")
+                mininsert = mil.mininsertloss(
+                    self, set180, set90, set45, set225)
+                print(mininsert)
+            elif minvarchoice == "A":
+                self.k = input("How many values would you like to search?")
+                minamp = mpa.minampvar(self)
+                print(minamp)
             else:
                 print("Not a valid option")
         elif consent == 'T':
