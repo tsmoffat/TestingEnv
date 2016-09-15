@@ -7,6 +7,7 @@ def attlist(self):
     listatt = []
     for row in self.dsa.iter_rows(row_offset=2):
         if row[self.dsas2128].value is not None:
+            # Adds value to list if it actually has a value
             listatt.append(row[self.dsas2128].value)
     return listatt
 

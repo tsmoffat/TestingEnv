@@ -1,15 +1,1 @@
-loop function- table - 256x128
-
-if few solutions choose one with lowest loss
-
-find best few
-
-best variation across frequency
-
-remove correction in attenuation
-
-six bit loop
-
-table with columns: which settings used
-
-insertion loss i.e. s21 - best phase value with least low value for attenuation
+Add in a way to have multiple modules called one after another

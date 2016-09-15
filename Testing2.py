@@ -11,16 +11,16 @@ import os
 import minphasevariation as mpv
 import mininsertloss as mil
 import minphaseatt as mpa
+import minattvar as mav
 
 
 class Main:
-    """Where the real magic happens."""
+    """The main controlling class."""
 
     def __init__(self):
         """Initialise class."""
         print("Initialising")
-        print("Make sure when handing the program over that paths to directories aren't hard coded")
-        self.phase24 = 1
+        self.phase24 = 1  # Sets up all the important values in trhe program, mostly referring to positions in the spreadsheet
         self.phase28 = 2
         self.phase32 = 3
         self.att24 = 4
@@ -47,17 +47,21 @@ class Main:
         self.k = 0
 
     def main(self):
-        """More magic."""
+        """Control all the other modules in the program."""
         dec.getcontext().prec = 6
         consent = input(
             "Would you like to calculate a specific (V)alue or generate a lookup (T)able?")
         if consent == 'V':
-            minvarchoice = input(
-                "Would you like to find the most (E)fficient value, the value with least (D)ifference across frequencies, the value with the minimum (I)nsertion loss or the attenuation mith minimum (A)mplitude variation?")
-            self.targetphase = input(
-                "Please enter the desired phase shift for 28GHz")
-            self.targetatt = input(
-                "Please enter the desired attenuation for 28GHz")
+            # Selects each module individually, there may be more added in in
+            # the future
+            print("Choose what you would like to find")
+            print("E - the most efficient value")
+            print("D - the value with least variation across frequency")
+            print("I - the value with minimum insertion loss")
+            print("A - the attenuation value with minimum variation across frequency")
+            print(
+                "P - the attenuation value with minimum phase difference across frequency")
+            minvarchoice = input()
 
             list180 = []
             for row in self.s180.iter_rows(row_offset=2):
@@ -83,10 +87,16 @@ class Main:
                     list225.append(dec.Decimal(row[self.phase28].value))
             set225 = set(list225)
             if minvarchoice == "D":
+                self.targetphase = input(
+                    "Please enter the desired phase shift for 28GHz")
                 self.k = input("How many values would you like to search?")
                 minphase = mpv.minvariation(self, set180, set90, set45, set225)
                 print(minphase)
             elif minvarchoice == "E":
+                self.targetphase = input(
+                    "Please enter the desired phase shift for 28GHz")
+                self.targetatt = input(
+                    "Please enter the desired attenuation for 28GHz")
                 bestresult = ex.checkall(self, set180, set90, set45, set225)
                 print(bestresult)
                 bestresult2 = tp.checkall(self, set180, set90, set45, set225)
@@ -110,10 +120,18 @@ class Main:
                 mininsert = mil.mininsertloss(
                     self, set180, set90, set45, set225)
                 print(mininsert)
-            elif minvarchoice == "A":
+            elif minvarchoice == "P":
+                self.targetatt = input(
+                    "Please enter the desired attenuation for 28GHz")
                 self.k = input("How many values would you like to search?")
                 minamp = mpa.minampvar(self)
                 print(minamp)
+            elif minvarchoice = "A":
+                self.targetatt = input(
+                    "Please enter the desired attenuation for 28GHz")
+                self.k = input("How many values would you like to search?")
+                minatt = mav.minattvar(self)
+                print(minatt)
             else:
                 print("Not a valid option")
         elif consent == 'T':

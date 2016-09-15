@@ -1,14 +1,14 @@
-"""A module to find the attenuation with minimum phase change."""
+"""Module to find minimum attenuation variation across frequency."""
 import decimal as dec
 from heapq import nsmallest
 import AttenuationSearch as ats
 
 
-def minampvar(self):
-    """Search for minimum variation in phase across attenuation frequency."""
+def minattvar(self):
+    """Search for minimum amplitude variation across frequency."""
     listatt = []
     totallist = []
-    ampvar = []
+    attvar = []
     for row in self.dsa.iter_rows(row_offset=2):
         if row[self.dsas2128].value is not None:
             listatt.append(row[self.dsas2128].value)
@@ -18,15 +18,14 @@ def minampvar(self):
     print(closest)
     for i in closest:
         resultsdict = ats.attenuationsearch(self, listatt, i)
-        # Finds total variation in phase
-        variation = resultsdict['phase2132'] - resultsdict['phase2124']
+        variation = resultsdict['att2132'] - resultsdict['phase2124']
         resultsdict['variation'] = variation
         totallist.append(resultsdict)
-        ampvar.append(variation)
+        attvar.append(variation)
 
     print(totallist)
-    print(ampvar)
-    minampdiff = min(abs(i) for i in ampvar)
+    print(attvar)
+    minattdiff = min(abs(i) for i in attvar)
     for m in totallist:
-        if abs(m['variation']) == minampdiff:
-            return m  # Returns the dictionary with the minimum phase variation in it
+        if abs(m['variation']) == minattdiff:
+            return m
