@@ -1,0 +1,158 @@
+PWD C:/Users/tmoffat/Documents/GitHub/TestingEnv/Docs
+INPUT C:/Users/tmoffat/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt
+INPUT docs.tex
+OUTPUT docs.log
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/article.cls
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/article.cls
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/size10.clo
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/size10.clo
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/inputenc.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/inputenc.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/utf8.def
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/utf8.def
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/t1enc.dfu
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/t1enc.dfu
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/ot1enc.dfu
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/ot1enc.dfu
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/omsenc.dfu
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/omsenc.dfu
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/minted/minted.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/minted/minted.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/keyval.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/keyval.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/kvoptions.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/kvoptions.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ltxcmds.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ltxcmds.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/kvsetkeys.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/kvsetkeys.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/infwarerr.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/infwarerr.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/etexcmds.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/etexcmds.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ifluatex.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ifluatex.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/fvextra/fvextra.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/fvextra/fvextra.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/ifthen.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/ifthen.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/etoolbox/etoolbox.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/etoolbox/etoolbox.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/fancyvrb/fancyvrb.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/fancyvrb/fancyvrb.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/upquote/upquote.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/upquote/upquote.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lineno/lineno.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lineno/lineno.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmtt10.tfm
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/float/float.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/float/float.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/tools/calc.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/tools/calc.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/tools/shellesc.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/tools/shellesc.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/tools/shellesc.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/ifplatform/ifplatform.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/ifplatform/ifplatform.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/pdftexcmds.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/pdftexcmds.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/catchfile.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/catchfile.sty
+INPUT nul:.tex
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/xstring/xstring.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/xstring/xstring.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/xstring/xstring.tex
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/framed/framed.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/framed/framed.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/hyperref/hyperref.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/hyperref/hyperref.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/hobsub-generic.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/hobsub-generic.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/auxhook.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/auxhook.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/hyperref/pd1enc.def
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/hyperref/pd1enc.def
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/00miktex/hyperref.cfg
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/00miktex/hyperref.cfg
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/url/url.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/url/url.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/hyperref/hpdftex.def
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/hyperref/hpdftex.def
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/xcolor/xcolor.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/xcolor/xcolor.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/00miktex/color.cfg
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/00miktex/color.cfg
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-def/pdftex.def
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-def/pdftex.def
+INPUT docs.aex
+INPUT docs.aex
+INPUT docs.aux
+INPUT docs.aux
+OUTPUT docs.aux
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/hyperref/nameref.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/latex/hyperref/nameref.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/gettitlestring.sty
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/gettitlestring.sty
+INPUT docs.out
+INPUT docs.out
+INPUT docs.out
+INPUT docs.out
+OUTPUT docs.pdf
+INPUT ./docs.out
+INPUT ./docs.out
+OUTPUT docs.out
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/context/base/supp-pdf.mkii
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/tex/context/base/supp-pdf.mkii
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmr17.tfm
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmr12.tfm
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmr8.tfm
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmr6.tfm
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmmi12.tfm
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmmi8.tfm
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmmi6.tfm
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmsy10.tfm
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmsy8.tfm
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmsy6.tfm
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmr12.tfm
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmbx12.tfm
+OUTPUT docs.pyg
+INPUT _minted-docs/default-pyg-prefix.pygstyle
+INPUT _minted-docs/default-pyg-prefix.pygstyle
+INPUT _minted-docs/default-pyg-prefix.pygstyle
+INPUT _minted-docs/default-pyg-prefix.pygstyle
+INPUT _minted-docs/default.pygstyle
+INPUT _minted-docs/default.pygstyle
+INPUT _minted-docs/default.pygstyle
+INPUT _minted-docs/default.pygstyle
+INPUT ./docs.pyg
+INPUT _minted-docs/07F979AC8EF221CC388EC8557433667380A3A24FD2DAC5EF509D51838CA90BB9.pygtex
+INPUT _minted-docs/07F979AC8EF221CC388EC8557433667380A3A24FD2DAC5EF509D51838CA90BB9.pygtex
+INPUT _minted-docs/07F979AC8EF221CC388EC8557433667380A3A24FD2DAC5EF509D51838CA90BB9.pygtex
+INPUT _minted-docs/07F979AC8EF221CC388EC8557433667380A3A24FD2DAC5EF509D51838CA90BB9.pygtex
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmitt10.tfm
+INPUT C:/Users/tmoffat/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map
+INPUT docs.aux
+INPUT ./docs.out
+INPUT ./docs.out
+INPUT docs.pyg
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmitt10.pfb
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmitt10.pfb
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb
+INPUT C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb

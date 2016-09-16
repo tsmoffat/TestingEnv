@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Documentation}
+\author{tsmoffat}
+\date{September 2016}
+
+\usepackage{minted}
+\usepackage{hyperref}
+\newcommand{\q}[1]{``#1''}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+The aim of this document is to explain the code in the program and how to run it etc. It will be in lieu of comments within the code, due to the large amount of repeated code
+within the program
+
+\section{Installation}
+To install the program, make sure you have Git installed on your system as well as Git LFS (for large files). Get the URL of the project from GitHub, navigate to
+where you would like the project to be stored and run git clone (URL) in your terminal/command line. This will pull the project from GitHub. Then type git lfs track
+\q{*.txt} into your terminal to make sure that the large file system is tracking text files, before running git clone (URL) again to download the text files for this program.
+ \par To run the program, install Anaconda for Python 3.5 from \url{https://www.continuum.io/downloads}. This will make sure that everything is installed correctly. Once this
+ is installed, restart your terminal then type \q{pip install tabulate} to install the missing package needed for this program.
+
+
+\section{Running}
+There are two options for this. Either navigate to the directory containing the project and type Testing2.py
+or load the project up in PyCharm and run it from there.
+
+\section{Code Explanation}
+This section is intended to explain some of the possible more obscure code in the program
+
+\begin{minted}{python}
+
+def closest_finder(self):
+    """Find the closest value to a given value."""
+    combined = set(map(str.rstrip, open(
+        (os.path.join(os.path.dirname(__file__), '1809045225.txt')))))
+    closest = min(combined, key=lambda x: abs(
+        dec.Decimal(x) - dec.Decimal(self.targetphase)))
+    closest = dec.Decimal(closest)
+    print(closest)
+    return closest
+    del combined
+
+\end{minted}
+This snippet is from FourPhase.py, and finds the closest value to the target value. The line starting \q{combined =} gets the path of the directory where the program
+currently is running and then loads the text file specified, before loading it into a set, which ensures there are no duplicate numbers present. The following line uses
+a lambda function, which is a function that isn't attached to an identifier, so is only called in that one spot. The purpose of this lambda function is to find the
+number with the smallest absolute difference from the target. These two numbers are converted into decimal format, which is like a floating point number but it allows
+for rounding, so the number isn't 64 bits. The closest value is then returned to whatever bit of code called it, and is then used later in the program.
+
+
+
+\end{document}
