@@ -126,7 +126,7 @@ class Main:
                 self.k = input("How many values would you like to search?")
                 minamp = mpa.minampvar(self)
                 print(minamp)
-            elif minvarchoice = "A":
+            elif minvarchoice == "A":
                 self.targetatt = input(
                     "Please enter the desired attenuation for 28GHz")
                 self.k = input("How many values would you like to search?")

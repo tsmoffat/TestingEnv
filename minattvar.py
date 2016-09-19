@@ -26,7 +26,7 @@ def minattvar(self):
         # Calls the AttenuationSearch module to search for the various values.
         # It does this for each item in the closest list
         resultsdict = ats.attenuationsearch(self, listatt, i)
-        variation = resultsdict['att2132'] - resultsdict['phase2124']
+        variation = resultsdict['att2132'] - resultsdict['att2124']
         # Adds a new value to the dictionary, with the key variation
         resultsdict['variation'] = variation
         totallist.append(resultsdict)

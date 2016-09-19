@@ -1,0 +1,223 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Literally some magic.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{k+kn}{import} \PYG{n+nn}{decimal} \PYG{k+kn}{as} \PYG{n+nn}{dec}
+
+
+\PYG{k}{def} \PYG{n+nf}{check180}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{set180}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}180 degrees of magic.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{getcontext}\PYG{p}{()}\PYG{o}{.}\PYG{n}{prec} \PYG{o}{=} \PYG{l+m+mi}{6}
+    \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase} \PYG{o+ow}{in} \PYG{n}{set180}\PYG{p}{:}
+        \PYG{k}{for} \PYG{n}{row} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{s180}\PYG{o}{.}\PYG{n}{iter\PYGZus{}rows}\PYG{p}{():}
+            \PYG{k}{if} \PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase28}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value} \PYG{o}{==} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{:}
+                \PYG{n}{row1} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}
+                \PYG{n}{att1} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{att28}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}
+                \PYG{n}{phaselow} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase24}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phasehigh} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase32}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phasediff} \PYG{o}{=} \PYG{n}{phasehigh} \PYG{o}{\PYGZhy{}} \PYG{n}{phaselow}
+
+        \PYG{k}{return} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{:} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}row1\PYGZsq{}}\PYG{p}{:} \PYG{n}{row1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}att1\PYGZsq{}}\PYG{p}{:} \PYG{n}{att1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}phasediff\PYGZsq{}}\PYG{p}{:} \PYG{n}{phasediff}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}source1\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}s180\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}totalphase\PYGZsq{}}\PYG{p}{:} \PYG{n}{att1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{:} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{\PYGZcb{}}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{closest} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{set180}\PYG{p}{,} \PYG{n}{key}\PYG{o}{=}\PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n+nb}{abs}\PYG{p}{(}
+            \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{)))}
+        \PYG{k}{for} \PYG{n}{row} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{s180}\PYG{o}{.}\PYG{n}{iter\PYGZus{}rows}\PYG{p}{():}
+            \PYG{k}{if} \PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase28}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value} \PYG{o}{==} \PYG{n}{closest}\PYG{p}{:}
+                \PYG{n}{closestround} \PYG{o}{=} \PYG{n}{closest}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{row1} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}
+                \PYG{n}{att1} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{att28}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phaselow} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase24}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phasehigh} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase32}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phasediff} \PYG{o}{=} \PYG{n}{phasehigh} \PYG{o}{\PYGZhy{}} \PYG{n}{phaselow}
+
+        \PYG{k}{return} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{:} \PYG{n}{closestround}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}row1\PYGZsq{}}\PYG{p}{:} \PYG{n}{row1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}att1\PYGZsq{}}\PYG{p}{:} \PYG{n}{att1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}phasediff\PYGZsq{}}\PYG{p}{:} \PYG{n}{phasediff}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}source1\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}s180\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}totalphase\PYGZsq{}}\PYG{p}{:} \PYG{n}{att1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{:} \PYG{n}{closestround}\PYG{p}{\PYGZcb{}}
+
+
+\PYG{k}{def} \PYG{n+nf}{check90}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{set90}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}90 degrees of magic.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{getcontext}\PYG{p}{()}\PYG{o}{.}\PYG{n}{prec} \PYG{o}{=} \PYG{l+m+mi}{6}
+    \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase} \PYG{o+ow}{in} \PYG{n}{set90}\PYG{p}{:}
+        \PYG{k}{for} \PYG{n}{row} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{s90}\PYG{o}{.}\PYG{n}{iter\PYGZus{}rows}\PYG{p}{():}
+            \PYG{k}{if} \PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase28}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value} \PYG{o}{==} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{:}
+                \PYG{n}{row1} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}
+                \PYG{n}{att1} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{att28}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phaselow} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase24}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phasehigh} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase32}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phasediff} \PYG{o}{=} \PYG{n}{phasehigh} \PYG{o}{\PYGZhy{}} \PYG{n}{phaselow}
+
+        \PYG{k}{return} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{:} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}row1\PYGZsq{}}\PYG{p}{:} \PYG{n}{row1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}att1\PYGZsq{}}\PYG{p}{:} \PYG{n}{att1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}phasediff\PYGZsq{}}\PYG{p}{:} \PYG{n}{phasediff}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}source1\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}s90\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}totalphase\PYGZsq{}}\PYG{p}{:} \PYG{n}{att1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{:} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{closest} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{set90}\PYG{p}{,} \PYG{n}{key}\PYG{o}{=}\PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n+nb}{abs}\PYG{p}{(}
+            \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{)))}
+        \PYG{k}{for} \PYG{n}{row} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{s90}\PYG{o}{.}\PYG{n}{iter\PYGZus{}rows}\PYG{p}{():}
+            \PYG{k}{if} \PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase28}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value} \PYG{o}{==} \PYG{n}{closest}\PYG{p}{:}
+                \PYG{n}{closestround} \PYG{o}{=} \PYG{n}{closest}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{row1} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}
+                \PYG{n}{att1} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{att28}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phaselow} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase24}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phasehigh} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase32}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phasediff} \PYG{o}{=} \PYG{n}{phasehigh} \PYG{o}{\PYGZhy{}} \PYG{n}{phaselow}
+
+        \PYG{k}{return} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{:} \PYG{n}{closestround}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}row1\PYGZsq{}}\PYG{p}{:} \PYG{n}{row1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}att1\PYGZsq{}}\PYG{p}{:} \PYG{n}{att1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}phasediff\PYGZsq{}}\PYG{p}{:} \PYG{n}{phasediff}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}source1\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}s90\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}totalphase\PYGZsq{}}\PYG{p}{:} \PYG{n}{att1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{:} \PYG{n}{closestround}\PYG{p}{\PYGZcb{}}
+
+
+\PYG{k}{def} \PYG{n+nf}{check45}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{set45}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}45 Degrees of magic.}
+
+\PYG{l+s+sd}{    Parameters}
+\PYG{l+s+sd}{    \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{l+s+sd}{    self, set45, set45}
+\PYG{l+s+sd}{    Returns}
+\PYG{l+s+sd}{    \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{l+s+sd}{    phase1, row1, att1, phasediff}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{getcontext}\PYG{p}{()}\PYG{o}{.}\PYG{n}{prec} \PYG{o}{=} \PYG{l+m+mi}{6}
+    \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase} \PYG{o+ow}{in} \PYG{n}{set45}\PYG{p}{:}
+        \PYG{k}{for} \PYG{n}{row} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{s45}\PYG{o}{.}\PYG{n}{iter\PYGZus{}rows}\PYG{p}{():}
+            \PYG{k}{if} \PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase28}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value} \PYG{o}{==} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{:}
+                \PYG{n}{row1} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}
+                \PYG{n}{att1} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{att28}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phaselow} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase24}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phasehigh} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase32}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phasediff} \PYG{o}{=} \PYG{n}{phasehigh} \PYG{o}{\PYGZhy{}} \PYG{n}{phaselow}
+
+        \PYG{k}{return} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{:} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}row1\PYGZsq{}}\PYG{p}{:} \PYG{n}{row1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}att1\PYGZsq{}}\PYG{p}{:} \PYG{n}{att1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}phasediff\PYGZsq{}}\PYG{p}{:} \PYG{n}{phasediff}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}source1\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}s45\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}totalphase\PYGZsq{}}\PYG{p}{:} \PYG{n}{att1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{:} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{closest} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{set45}\PYG{p}{,} \PYG{n}{key}\PYG{o}{=}\PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n+nb}{abs}\PYG{p}{(}
+            \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{)))}
+        \PYG{k}{for} \PYG{n}{row} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{s45}\PYG{o}{.}\PYG{n}{iter\PYGZus{}rows}\PYG{p}{():}
+            \PYG{k}{if} \PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase28}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value} \PYG{o}{==} \PYG{n}{closest}\PYG{p}{:}
+                \PYG{n}{closestround} \PYG{o}{=} \PYG{n}{closest}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{row1} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}
+                \PYG{n}{att1} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{att28}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phaselow} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase24}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phasehigh} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase32}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phasediff} \PYG{o}{=} \PYG{n}{phasehigh} \PYG{o}{\PYGZhy{}} \PYG{n}{phaselow}
+
+        \PYG{k}{return} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{:} \PYG{n}{closestround}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}row1\PYGZsq{}}\PYG{p}{:} \PYG{n}{row1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}att1\PYGZsq{}}\PYG{p}{:} \PYG{n}{att1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}phasediff\PYGZsq{}}\PYG{p}{:} \PYG{n}{phasediff}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}source1\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}s45\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}totalphase\PYGZsq{}}\PYG{p}{:} \PYG{n}{att1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{:} \PYG{n}{closestround}\PYG{p}{\PYGZcb{}}
+
+
+\PYG{k}{def} \PYG{n+nf}{check225}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{set225}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}22.5 degrees of magic.}
+
+\PYG{l+s+sd}{    Parameters}
+\PYG{l+s+sd}{    \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{l+s+sd}{    self, s225, set225}
+\PYG{l+s+sd}{    Returns}
+\PYG{l+s+sd}{    \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{l+s+sd}{    phase1, row1, att1, phasediff}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{getcontext}\PYG{p}{()}\PYG{o}{.}\PYG{n}{prec} \PYG{o}{=} \PYG{l+m+mi}{6}
+    \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase} \PYG{o+ow}{in} \PYG{n}{set225}\PYG{p}{:}
+        \PYG{k}{for} \PYG{n}{row} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{s225}\PYG{o}{.}\PYG{n}{iter\PYGZus{}rows}\PYG{p}{():}
+            \PYG{k}{if} \PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase28}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value} \PYG{o}{==} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{:}
+                \PYG{n}{row1} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}
+                \PYG{n}{att1} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{att28}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phaselow} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase24}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phasehigh} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase32}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phasediff} \PYG{o}{=} \PYG{n}{phasehigh} \PYG{o}{\PYGZhy{}} \PYG{n}{phaselow}
+
+        \PYG{k}{return} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{:} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}row1\PYGZsq{}}\PYG{p}{:} \PYG{n}{row1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}att1\PYGZsq{}}\PYG{p}{:} \PYG{n}{att1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}phasediff\PYGZsq{}}\PYG{p}{:} \PYG{n}{phasediff}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}source1\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}s225\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}totalphase\PYGZsq{}}\PYG{p}{:} \PYG{n}{att1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{:} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{closest} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{set225}\PYG{p}{,} \PYG{n}{key}\PYG{o}{=}\PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n+nb}{abs}\PYG{p}{(}
+            \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{)))}
+        \PYG{k}{for} \PYG{n}{row} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{s225}\PYG{o}{.}\PYG{n}{iter\PYGZus{}rows}\PYG{p}{():}
+            \PYG{k}{if} \PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase28}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value} \PYG{o}{==} \PYG{n}{closest}\PYG{p}{:}
+                \PYG{n}{closestround} \PYG{o}{=} \PYG{n}{closest}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{row1} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}
+                \PYG{n}{att1} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{att28}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phaselow} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase24}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phasehigh} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{phase32}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}
+                    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+                \PYG{n}{phasediff} \PYG{o}{=} \PYG{n}{phasehigh} \PYG{o}{\PYGZhy{}} \PYG{n}{phaselow}
+
+        \PYG{k}{return} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{:} \PYG{n}{closestround}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}row1\PYGZsq{}}\PYG{p}{:} \PYG{n}{row1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}att1\PYGZsq{}}\PYG{p}{:} \PYG{n}{att1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}phasediff\PYGZsq{}}\PYG{p}{:} \PYG{n}{phasediff}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}source1\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}s225\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}totalphase\PYGZsq{}}\PYG{p}{:} \PYG{n}{att1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{:} \PYG{n}{closestround}\PYG{p}{\PYGZcb{}}
+
+
+\PYG{k}{def} \PYG{n+nf}{checkall}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{set180}\PYG{p}{,} \PYG{n}{set90}\PYG{p}{,} \PYG{n}{set45}\PYG{p}{,} \PYG{n}{set225}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Check to find most accurate solution so far.}
+
+\PYG{l+s+sd}{    Parameters}
+\PYG{l+s+sd}{    \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{l+s+sd}{    self}
+\PYG{l+s+sd}{    Returns}
+\PYG{l+s+sd}{    \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{l+s+sd}{    bestsol data dict}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{dec}\PYG{o}{.}\PYG{n}{getcontext}\PYG{p}{()}\PYG{o}{.}\PYG{n}{prec} \PYG{o}{=} \PYG{l+m+mi}{6}
+    \PYG{n}{sol180} \PYG{o}{=} \PYG{n}{check180}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{set180}\PYG{p}{)}
+    \PYG{n}{sol90} \PYG{o}{=} \PYG{n}{check90}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{set90}\PYG{p}{)}
+    \PYG{n}{sol45} \PYG{o}{=} \PYG{n}{check45}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{set45}\PYG{p}{)}
+    \PYG{n}{sol225} \PYG{o}{=} \PYG{n}{check225}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{set225}\PYG{p}{)}
+    \PYG{n}{bestsollist} \PYG{o}{=} \PYG{p}{[}\PYG{n}{sol180}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{],} \PYG{n}{sol90}\PYG{p}{[}
+        \PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{],} \PYG{n}{sol45}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{],} \PYG{n}{sol225}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{]]}
+
+    \PYG{k}{if} \PYG{n}{sol180}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n}{sol180}
+
+    \PYG{k}{elif} \PYG{n}{sol90}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n}{sol90}
+
+    \PYG{k}{elif} \PYG{n}{sol45}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n}{sol45}
+
+    \PYG{k}{elif} \PYG{n}{sol225}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n}{sol45}
+
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{closest} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{bestsollist}\PYG{p}{,} \PYG{n}{key}\PYG{o}{=}\PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n+nb}{abs}\PYG{p}{(}
+            \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{)))}
+        \PYG{k}{if} \PYG{n}{closest} \PYG{o}{==} \PYG{n}{sol180}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{]:}
+            \PYG{k}{return} \PYG{n}{sol180}
+        \PYG{k}{elif} \PYG{n}{closest} \PYG{o}{==} \PYG{n}{sol90}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{]:}
+            \PYG{k}{return} \PYG{n}{sol90}
+        \PYG{k}{elif} \PYG{n}{closest} \PYG{o}{==} \PYG{n}{sol45}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{]:}
+            \PYG{k}{return} \PYG{n}{sol45}
+        \PYG{k}{elif} \PYG{n}{closest} \PYG{o}{==} \PYG{n}{sol225}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}phase1\PYGZsq{}}\PYG{p}{]:}
+            \PYG{k}{return} \PYG{n}{sol225}
+        \PYG{k}{else}\PYG{p}{:}
+            \PYG{k}{return} \PYG{n+nb+bp}{None}
+
+
+\PYG{k}{def} \PYG{n+nf}{mostaccurate}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{bestresult}\PYG{p}{,} \PYG{n}{bestresult2}\PYG{p}{,} \PYG{n}{bestresult3}\PYG{p}{,} \PYG{n}{bestresult4}\PYG{p}{,} \PYG{n}{sollist}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Find most accurate solution and return.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{bestsol} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{sollist}\PYG{p}{,} \PYG{n}{key}\PYG{o}{=}\PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n+nb}{abs}\PYG{p}{(}
+        \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{)))}
+    \PYG{k}{if} \PYG{n}{bestsol} \PYG{o}{==} \PYG{n}{bestresult}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{]:}
+        \PYG{k}{return} \PYG{n}{bestresult}
+    \PYG{k}{elif} \PYG{n}{bestsol} \PYG{o}{==} \PYG{n}{bestresult2}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{]:}
+        \PYG{k}{return} \PYG{n}{bestresult2}
+    \PYG{k}{elif} \PYG{n}{bestsol} \PYG{o}{==} \PYG{n}{bestresult3}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{]:}
+        \PYG{k}{return} \PYG{n}{bestresult3}
+    \PYG{k}{elif} \PYG{n}{bestsol} \PYG{o}{==} \PYG{n}{bestresult4}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{]:}
+        \PYG{k}{return} \PYG{n}{bestresult4}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n+nb+bp}{None}
+\end{Verbatim}

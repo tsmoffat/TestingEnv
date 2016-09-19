@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.9.16)  16 SEP 2016 15:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.9.16)  19 SEP 2016 16:31
 entering extended mode
-**./docs.tex
-(docs.tex
+**C:/Users/tmoffat/Documents/GitHub/TestingEnv/Docs/docs.tex
+(C:/Users/tmoffat/Documents/GitHub/TestingEnv/Docs/docs.tex
 LaTeX2e <2016/03/31> patch level 3
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls
@@ -27,13 +27,13 @@ y"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
-("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def"
+ ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
-("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+ ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -269,6 +269,7 @@ File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
 )
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
+
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
@@ -309,7 +310,8 @@ File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
 )
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
-("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+ ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omsenc.dfu
+"
 File: omsenc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -333,15 +335,234 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fira\FiraSans.st
+y"
+Package: FiraSans 2014/11/19 (Bob Tennent and autoinst) Style file for Fira San
+s fonts.
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxete
+x.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\iflua
+tex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.
+sty"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkeyva
+l.tex"
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkvuti
+ls.tex"
+\XKV@toks=\toks16
+\XKV@tempa@toks=\toks17
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\keyval
+.tex"))
+\XKV@depth=\count87
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\textcomp.st
+y"
+Package: textcomp 2016/06/19 v1.99m Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
+File: ts1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+))
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.sty
+"
+Package: fontenc 2016/06/19 v1.99m Standard LaTeX package
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\mweights\mweight
+s.sty"
+Package: mweights 2016/08/15 (Bob Tennent) Support package for multiple-weight 
+font packages. 
+LaTeX Info: Redefining \bfseries on input line 22.
+LaTeX Info: Redefining \mdseries on input line 29.
+LaTeX Info: Redefining \rmfamily on input line 36.
+LaTeX Info: Redefining \sffamily on input line 54.
+LaTeX Info: Redefining \ttfamily on input line 72.
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fontaxes\fontaxe
+s.sty"
+Package: fontaxes 2014/03/23 v1.0d Font selection axes
+LaTeX Info: Redefining \upshape on input line 29.
+LaTeX Info: Redefining \itshape on input line 31.
+LaTeX Info: Redefining \slshape on input line 33.
+LaTeX Info: Redefining \scshape on input line 37.
+))
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fira\FiraMono.st
+y"
+Package: FiraMono 2016/02/13 (Bob Tennent and autoinst) Style file for Fira Mon
+o fonts.
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.sty
+"
+Package: fontenc 2016/06/19 v1.99m Standard LaTeX package
+))
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.sty
+"
+Package: fontenc 2016/06/19 v1.99m Standard LaTeX package
+ ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2016/06/19 v1.99m Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\minted\minted.st
 y"
 Package: minted 2016/07/20 v2.4 Yet another Pygments shim for LaTeX
 
-("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.
-sty"
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks16
-)
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptio
 ns.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
@@ -361,12 +582,6 @@ Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etexc
 mds.sty"
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-
-("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\iflua
-tex.sty"
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
@@ -376,13 +591,14 @@ Package etexcmds Info: Could not find \expanded.
 sty"
 Package: fvextra 2016/09/02 v1.2.1 fvextra - extensions and patches for fancyvr
 b
+
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbo
 x.sty"
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count87
+\etb@tempcnta=\count88
 )
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fancyvrb\fancyvr
 b.sty"
@@ -390,11 +606,11 @@ Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count88
+\FV@CodeLineNo=\count89
 \FV@InFile=\read1
 \FV@TabBox=\box26
-\c@FancyVerbLine=\count89
-\FV@StepNumber=\count90
+\c@FancyVerbLine=\count90
+\FV@StepNumber=\count91
 \FV@OutFile=\write3
 )
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\upquote\upquote.
@@ -405,56 +621,66 @@ tim
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lineno\lineno.st
 y"
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count91
-\output=\toks17
-\linenoprevgraf=\count92
+\linenopenalty=\count92
+\output=\toks18
+\linenoprevgraf=\count93
 \linenumbersep=\dimen103
 \linenumberwidth=\dimen104
-\c@linenumber=\count93
-\c@pagewiselinenumber=\count94
-\c@LN@truepage=\count95
-\c@internallinenumber=\count96
-\c@internallinenumbers=\count97
+\c@linenumber=\count94
+\c@pagewiselinenumber=\count95
+\c@LN@truepage=\count96
+\c@internallinenumber=\count97
+\c@internallinenumbers=\count98
 \quotelinenumbersep=\dimen105
 \bframerule=\dimen106
 \bframesep=\dimen107
 \bframebox=\box27
 LaTeX Info: Redefining \\ on input line 3056.
 )
-\c@FV@TrueTabGroupLevel=\count98
-\c@FV@TrueTabCounter=\count99
+\c@FV@TrueTabGroupLevel=\count99
+\c@FV@TrueTabCounter=\count100
 \FV@TabBox@Group=\box28
 \FV@TmpLength=\skip43
-\c@FV@HighlightLinesStart=\count100
-\c@FV@HighlightLinesStop=\count101
+\c@FV@HighlightLinesStart=\count101
+\c@FV@HighlightLinesStop=\count102
 \FV@BreakIndent=\dimen108
 \FV@BreakSymbolSepLeft=\dimen109
 \FV@BreakSymbolSepRight=\dimen110
 \FV@BreakSymbolIndentLeft=\dimen111
+LaTeX Font Info:    Try loading font information for T1+FiraMono-TOsF on input 
+line 562.
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fira\t1firamono-
+tosf.fd"
+File: T1FiraMono-TOsF.fd 2015/05/23 (autoinst) Font definitions for T1/FiraMono
+-TOsF.
+)
+LaTeX Font Info:    Font shape `T1/FiraMono-TOsF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 562.
 \FV@BreakSymbolIndentRight=\dimen112
-\c@FancyVerbLineBreakLast=\count102
+\c@FancyVerbLineBreakLast=\count103
 \FV@LineBox=\box29
 \FV@LineIndentBox=\box30
-) ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.st
-y"
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count103
-\float@exts=\toks18
+\c@float@type=\count104
+\float@exts=\toks19
 \float@box=\box31
-\@float@everytoks=\toks19
+\@float@everytoks=\toks20
 \@floatcapt=\box32
 ) ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\calc.sty
 "
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count104
-\calc@Bcount=\count105
+\calc@Acount=\count105
+\calc@Bcount=\count106
 \calc@Adimen=\dimen113
 \calc@Bdimen=\dimen114
 \calc@Askip=\skip44
 \calc@Bskip=\skip45
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count106
+\calc@Ccount=\count107
 \calc@Cskip=\skip46
 )
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\shellesc.s
@@ -489,8 +715,8 @@ sty"
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xstring\xstrin
 g.tex"
 \@xs@message=\write4
-\integerpart=\count107
-\decimalpart=\count108
+\integerpart=\count108
+\decimalpart=\count109
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
@@ -506,10 +732,10 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \minted@appexistsfile=\read2
 \minted@bgbox=\box33
 \minted@code=\write5
-\c@minted@FancyVerbLineTemp=\count109
-\c@minted@pygmentizecounter=\count110
-\@float@every@listing=\toks20
-\c@listing=\count111
+\c@minted@FancyVerbLineTemp=\count110
+\c@minted@pygmentizecounter=\count111
+\@float@every@listing=\toks21
+\c@listing=\count112
 )
 runsystem(if not exist _minted-docs mkdir _minted-docs)...executed.
 
@@ -553,17 +779,13 @@ Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxete
-x.sty"
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-)
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\auxhook
 .sty"
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen119
-\Hy@linkcounter=\count112
-\Hy@pagecounter=\count113
+\Hy@linkcounter=\count113
+\Hy@pagecounter=\count114
 
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc.
 def"
@@ -571,7 +793,7 @@ File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count114
+\Hy@SavedSpaceFactor=\count115
 
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\hyperre
 f.cfg"
@@ -584,14 +806,15 @@ Package hyperref Info: Plain pages OFF on input line 4501.
 Package hyperref Info: Backreferencing OFF on input line 4506.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4735.
-\c@Hy@tempcnt=\count115
+\c@Hy@tempcnt=\count116
+
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5088.
 \XeTeXLinkMargin=\dimen120
-\Fld@menulength=\count116
+\Fld@menulength=\count117
 \Field@Width=\dimen121
 \Fld@charsize=\dimen122
 Package hyperref Info: Hyper figures OFF on input line 6342.
@@ -603,9 +826,9 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6367.
 Package hyperref Info: PDF/A mode OFF on input line 6372.
 LaTeX Info: Redefining \ref on input line 6412.
 LaTeX Info: Redefining \pageref on input line 6416.
-\Hy@abspage=\count117
-\c@Item=\count118
-\c@Hfootnote=\count119
+\Hy@abspage=\count118
+\c@Item=\count119
+\c@Hfootnote=\count120
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
@@ -614,8 +837,8 @@ Package hyperref Message: Driver (autodetected): hpdftex.
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hpdftex
 .def"
 File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
-\Fld@listcount=\count120
-\c@bookmark@seq@number=\count121
+\Fld@listcount=\count121
+\c@bookmark@seq@number=\count122
 
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\rerunfi
 lecheck.sty"
@@ -625,6 +848,138 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip48
 )
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometr
+y.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count123
+\Gm@cntv=\count124
+\c@Gm@tempcnt=\count125
+\Gm@bindingoffset=\dimen123
+\Gm@wd@mp=\dimen124
+\Gm@odd@mp=\dimen125
+\Gm@even@mp=\dimen126
+\Gm@layoutwidth=\dimen127
+\Gm@layoutheight=\dimen128
+\Gm@layouthoffset=\dimen129
+\Gm@layoutvoffset=\dimen130
+\Gm@dimlist=\toks22
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometr
+y.cfg"))
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tcolorbox\tcolor
+box.sty"
+Package: tcolorbox 2016/07/14 version 3.94 text color boxes
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclayer\p
+gf.sty"
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pg
+frcs.sty"
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfutil-common.tex"
+\pgfutil@everybye=\toks23
+\pgfutil@tempdima=\dimen131
+\pgfutil@tempdimb=\dimen132
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfutil-common-lists.tex"))
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfutil-latex.def"
+\pgfutil@abb=\box34
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfrcs.code.tex"
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclayer\p
+gfcore.sty"
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphic
+x.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphic
+s.sty"
+Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.st
+y"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\graphic
+s.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pdf
+tex.def"
+File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+\Gread@gobject=\count126
+))
+\Gin@req@height=\dimen133
+\Gin@req@width=\dimen134
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\systemlayer\
+pgfsys.sty"
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsys.code.tex"
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfkeys.code.tex"
+\pgfkeys@pathtoks=\toks24
+\pgfkeys@temptoks=\toks25
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfkeysfiltered.code.tex"
+\pgfkeys@tmptoks=\toks26
+))
+\pgf@x=\dimen135
+\pgf@y=\dimen136
+\pgf@xa=\dimen137
+\pgf@ya=\dimen138
+\pgf@xb=\dimen139
+\pgf@yb=\dimen140
+\pgf@xc=\dimen141
+\pgf@yc=\dimen142
+\w@pgf@writea=\write6
+\r@pgf@reada=\read3
+\c@pgf@counta=\count127
+\c@pgf@countb=\count128
+\c@pgf@countc=\count129
+\c@pgf@countd=\count130
+\t@pgf@toka=\toks27
+\t@pgf@tokb=\toks28
+\t@pgf@tokc=\toks29
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgf.cfg"
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsys-pdftex.def"
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsys-common-pdf.def"
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)))
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsyssoftpath.code.tex"
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count131
+\pgfsyssoftpath@bigbuffer@items=\count132
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsysprotocol.code.tex"
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.st
 y"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -634,12 +989,6 @@ fg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
-
-("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pdf
-tex.def"
-File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
-\Gread@gobject=\count122
-)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -650,30 +999,234 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcore.code.tex"
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+th.code.tex"
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thcalc.code.tex"
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thutil.code.tex")
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thparser.code.tex"
+\pgfmath@dimen=\dimen143
+\pgfmath@count=\count133
+\pgfmath@box=\box35
+\pgfmath@toks=\toks30
+\pgfmath@stack@operand=\toks31
+\pgfmath@stack@operation=\toks32
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.code.tex"
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.basic.code.tex")
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.trigonometric.code.tex")
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.random.code.tex")
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.comparison.code.tex")
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.base.code.tex")
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.round.code.tex")
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.misc.code.tex")
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.integerarithmetics.code.tex")))
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfloat.code.tex"
+\c@pgfmathroundto@lastzeros=\count134
+))
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepoints.code.tex"
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen144
+\pgf@picmaxx=\dimen145
+\pgf@picminy=\dimen146
+\pgf@picmaxy=\dimen147
+\pgf@pathminx=\dimen148
+\pgf@pathmaxx=\dimen149
+\pgf@pathminy=\dimen150
+\pgf@pathmaxy=\dimen151
+\pgf@xx=\dimen152
+\pgf@xy=\dimen153
+\pgf@yx=\dimen154
+\pgf@yy=\dimen155
+\pgf@zx=\dimen156
+\pgf@zy=\dimen157
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepathconstruct.code.tex"
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen158
+\pgf@path@lasty=\dimen159
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepathusage.code.tex"
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen160
+\pgf@shorten@start@additional=\dimen161
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorescopes.code.tex"
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box36
+\pgf@hbox=\box37
+\pgf@layerbox@main=\box38
+\pgf@picture@serial@count=\count135
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoregraphicstate.code.tex"
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen162
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoretransformations.code.tex"
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen163
+\pgf@pt@y=\dimen164
+\pgf@pt@temp=\dimen165
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorequick.code.tex"
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreobjects.code.tex"
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepathprocessing.code.tex"
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorearrows.code.tex"
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen166
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreshade.code.tex"
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen167
+\pgf@sys@shading@range@num=\count136
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreimage.code.tex"
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreexternal.code.tex"
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box39
+))
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorelayers.code.tex"
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoretransparency.code.tex"
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepatterns.code.tex"
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
+fmoduleshapes.code.tex"
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box40
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
+fmoduleplot.code.tex"
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibilit
+y\pgfcomp-version-0-65.sty"
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen168
+\pgf@nodesepend=\dimen169
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibilit
+y\pgfcomp-version-1-18.sty"
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+))
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\verbatim.s
+ty"
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks33
+\verbatim@line=\toks34
+\verbatim@in@stream=\read4
+)
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\environ\environ.
+sty"
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\trimspaces\trims
+paces.sty"
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks35
+)
+\tcb@titlebox=\box41
+\tcb@upperbox=\box42
+\tcb@lowerbox=\box43
+\tcb@phantombox=\box44
+\c@tcbbreakpart=\count137
+\c@tcblayer=\count138
+\tcolorbox@number=\count139
+\tcb@temp=\box45
+\tcb@temp=\box46
+\tcb@temp=\box47
+\tcb@temp=\box48
+\tcb@out=\write7
+\tcb@record@out=\write8
+)
 runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > do
 cs.aex <nul: /p x=^%~$PATH:i>> docs.aex)...executed.
 
 runsystem(del docs.aex)...executed.
 
-(docs.aux)
+ (docs.aux)
 \openout1 = `docs.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-\AtBeginShipoutBox=\box34
-Package hyperref Info: Link coloring OFF on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 18.
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Try loading font information for T1+FiraSans-OsF on input l
+ine 18.
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fira\t1firasans-
+osf.fd"
+File: T1FiraSans-OsF.fd 2015/05/23 (autoinst) Font definitions for T1/FiraSans-
+OsF.
+)
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 18.
+\c@mv@tabular=\count140
+\c@mv@boldtabular=\count141
+\AtBeginShipoutBox=\box49
+Package hyperref Info: Link coloring OFF on input line 18.
 
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref
 .sty"
@@ -683,81 +1236,287 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 tlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count123
+\c@section@level=\count142
 )
-LaTeX Info: Redefining \ref on input line 12.
-LaTeX Info: Redefining \pageref on input line 12.
-LaTeX Info: Redefining \nameref on input line 12.
-(docs.out) (docs.out)
-\@outlinefile=\write6
-\openout6 = `docs.out'.
+LaTeX Info: Redefining \ref on input line 18.
+LaTeX Info: Redefining \pageref on input line 18.
+LaTeX Info: Redefining \nameref on input line 18.
+ (docs.out) (docs.out)
+\@outlinefile=\write9
+\openout9 = `docs.out'.
 
 
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=-13.87262pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+ABD: EveryShipout initializing macros
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
 mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count124
-\scratchdimen=\dimen123
-\scratchbox=\box35
-\nofMPsegments=\count125
-\nofMParguments=\count126
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count127
-\MPscratchDim=\dimen124
-\MPnumerator=\count128
-\makeMPintoPDFobject=\count129
-\everyMPtoPDFconversion=\toks22
+\scratchcounter=\count143
+\scratchdimen=\dimen170
+\scratchbox=\box50
+\nofMPsegments=\count144
+\nofMParguments=\count145
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count146
+\MPscratchDim=\dimen171
+\MPnumerator=\count147
+\makeMPintoPDFobject=\count148
+\everyMPtoPDFconversion=\toks37
 )
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 15.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 15.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 15.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 24.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 24.
-\openout3 = `docs.pyg'.
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopd
+f-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-(_minted-docs/default-pyg-prefix.pygstyle) (_minted-docs/default.pygstyle)
-(_minted-docs/07F979AC8EF221CC388EC8557433667380A3A24FD2DAC5EF509D51838CA90BB9.
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.
+sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
+(Font)              scaled to size 17.28pt on input line 21.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
+(Font)              scaled to size 12.0pt on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 21.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
+(Font)              scaled to size 14.4pt on input line 22.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' will be
+(Font)              scaled to size 14.4pt on input line 22.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 30.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 30.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' will be
+(Font)              scaled to size 12.0pt on input line 41.
+ (_minted-docs/default-pyg-prefix.pygstyle)
+(_minted-docs/default.pygstyle)
+(_minted-docs/3F2D5570FA0337A2FD676F2A83F2559A517D9D27E669B24E69C770ACE3C654AE.
 pygtex
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
+
+LaTeX Font Warning: Font shape `T1/FiraMono-TOsF/m/it' undefined
+(Font)              using `T1/FiraMono-TOsF/m/n' instead on input line 2.
+
+LaTeX Font Info:    Font shape `T1/FiraMono-TOsF/m/it' will be
+(Font)              scaled to size 10.0pt on input line 2.
+LaTeX Font Info:    Font shape `T1/FiraMono-TOsF/b/n' will be
+(Font)              scaled to size 10.0pt on input line 3.
 [1
 
-{C:/Users/tmoffat/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 57.
-[2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
-(docs.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 57.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
+{C:/Users/tmoffat/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    Try loading font information for TS1+FiraMono-TOsF on input
+ line 29.
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fira\ts1firamono
+-tosf.fd"
+File: TS1FiraMono-TOsF.fd 2015/05/23 (autoinst) Font definitions for TS1/FiraMo
+no-TOsF.
+)
+LaTeX Font Info:    Font shape `TS1/FiraMono-TOsF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 29.
+LaTeX Font Info:    Font shape `T1/FiraMono-TOsF/m/n' will be
+(Font)              scaled to size 5.0pt on input line 35.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
+(Font)              scaled to size 5.0pt on input line 35.
+ [2])
+(_minted-docs/DEDC2E4B274FB2CBADCAC97A4C85CF44B915075F1A1B9EFA55B26B8308116810.
+pygtex [3] [4] [5] [6] [7] [8])
+(_minted-docs/0E55229D985BC07204C32520282EA958A9FD2E535507EBA1B6CB87F6CAE02AF8.
+pygtex
+Overfull \hbox (49.99538pt too wide) in paragraph at lines 31--31
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
+[]quantize(|  
+ []
+
+[9]
+Overfull \hbox (61.99538pt too wide) in paragraph at lines 33--33
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase24][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (61.99538pt too wide) in paragraph at lines 35--35
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase32][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (49.99538pt too wide) in paragraph at lines 42--42
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
+[]quantize(|  
+ []
+
+
+Overfull \hbox (61.99538pt too wide) in paragraph at lines 44--44
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase24][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (49.99538pt too wide) in paragraph at lines 46--46
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att32][].[]value)[].
+[]quantize(|  
+ []
+
+
+Overfull \hbox (49.99538pt too wide) in paragraph at lines 53--53
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
+[]quantize(|  
+ []
+
+
+Overfull \hbox (49.99538pt too wide) in paragraph at lines 55--55
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att24][].[]value)[].
+[]quantize(|  
+ []
+
+
+Overfull \hbox (49.99538pt too wide) in paragraph at lines 57--57
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att32][].[]value)[].
+[]quantize(|  
+ []
+
+[10]
+Overfull \hbox (49.99538pt too wide) in paragraph at lines 64--64
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
+[]quantize(|  
+ []
+
+
+Overfull \hbox (61.99538pt too wide) in paragraph at lines 66--66
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase24][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (61.99538pt too wide) in paragraph at lines 68--68
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase32][].[]value)[
+].[]quantize(|  
+ []
+
+) [11]
+(_minted-docs/5214A90211CBC3FBA1D4C131E22ABB9244AE01B98FFE6FED5B8F5862115CC4A0.
+pygtex [12] [13] [14] [15])
+(_minted-docs/9B3D74B1CE442EE017E9B1324D3CE400AD52BC0039F9CA8D2D733A3C477B3EC0.
+pygtex [16]
+
+LaTeX Font Warning: Font shape `TS1/FiraMono-TOsF/m/it' undefined
+(Font)              using `TS1/FiraMono-TOsF/m/n' instead
+(Font)              for symbol `textquotesingle' on input line 17.
+
+LaTeX Font Info:    Font shape `TS1/FiraMono-TOsF/m/it' will be
+(Font)              scaled to size 10.0pt on input line 17.
+[17])
+(_minted-docs/2A0AD37CF87E3F3CCF91FD70A8F184AA3AB38E3E4A58358C0AADCF05C62B0335.
+pygtex) [18]
+(_minted-docs/CBCF8E9E08B2B5F28CB3CBD03CCEC75F649D42EAFE008E9C4FAC854447B2DDC6.
+pygtex)
+(_minted-docs/B5AC783EDF2F5E38B94833EE73B56AE27C9152CFB90C863EED4085E5E2CA9894.
+pygtex [19])
+(_minted-docs/3D890F5D229BE116775A630A855D86303B86D6FD1564E2F8E9DDB91C1426454A.
+pygtex [20] [21]
+Overfull \hbox (25.99538pt too wide) in paragraph at lines 70--70
+\T1/FiraMono-TOsF/m/it/10 list180[].[]append(dec[].[]Decimal(row[[]self[][].[]p
+hase28][].[]value))|  
+ []
+
+[22]
+Overfull \hbox (25.99538pt too wide) in paragraph at lines 88--88
+\T1/FiraMono-TOsF/m/it/10 list225[].[]append(dec[].[]Decimal(row[[]self[][].[]p
+hase28][].[]value))|  
+ []
+
+[23])
+\openout5 = `docs.pyg'.
+
+
+(_minted-docs/750169AA13E4F851E0DC1141F4865E0A80A3A24FD2DAC5EF509D51838CA90BB9.
+pygtex
+Missing character: There is no ` in font FiraMono-Regular-tosf-ts1!
+Missing character: There is no ` in font FiraMono-Regular-tosf-ts1!
+) [24]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
+ (docs.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
 Package rerunfilecheck Info: File `docs.out' has not changed.
-(rerunfilecheck)             Checksum: E4702CB28E4D5F35502BE8C06A666C26;191.
+(rerunfilecheck)             Checksum: D2F98AC5AA34842ABD789C71AC4F01A5;779.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 runsystem(del docs.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 8411 strings out of 493334
- 137636 string characters out of 3129356
- 263749 words of memory out of 3000000
- 11834 multiletter control sequences out of 15000+200000
- 7616 words of font info for 28 fonts, out of 3000000 for 9000
+ 19159 strings out of 493334
+ 368077 string characters out of 3129356
+ 483199 words of memory out of 3000000
+ 22254 multiletter control sequences out of 15000+200000
+ 66297 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,35p,841b,542s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmbx12.pfb><C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmitt10.pfb><C:/Users/tmoffat/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/tmoffat/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/tmoffat/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/
-Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmtt10.pfb>
-Output written on docs.pdf (2 pages, 81491 bytes).
+ 54i,9n,73p,3268b,621s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/fira/fir_
+mpt7xh.enc}{C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/
+fira/fir_xbqiro.enc} <C:\Users\tmoffat\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
+\jknappen\ec\dpi600\ecrm0500.pk>{C:/Users/tmoffat/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/enc/dvips/fira/fir_ekigrt.enc}<C:/Users/tmoffat/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/fira/FiraMono-Bold.pfb><C:/Users/tmoffat/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/fira/FiraMono-Regular.pfb><C:/U
+sers/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/fira/FiraSans
+-Bold.pfb><C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/fira/FiraSans-Book.pfb><C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/tmoffat/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/tmoffat/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/tmo
+ffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+>
+Output written on docs.pdf (24 pages, 402419 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
- 7 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 225 PDF objects out of 1000 (max. 8388607)
+ 38 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
