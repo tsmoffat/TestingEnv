@@ -20,89 +20,167 @@
 \maketitle
 
 \section{Introduction}
-The aim of this document is to explain the code in the program and how to run it etc. It will be in lieu of comments within the code, due to the large amount of repeated code
-within the program
+The aim of this document is to explain the code in the program and how to run it etc. It will be in
+lieu of comments within the code, due to the large amount of repeated code within the program
 
 \section{Installation}
-To install the program, make sure you have Git installed on your system as well as Git LFS (for large files). Get the URL of the project from GitHub, navigate to
-where you would like the project to be stored and run git clone (URL) in your terminal/command line. This will pull the project from GitHub. Then type git lfs track
-\q{*.txt} into your terminal to make sure that the large file system is tracking text files, before running git clone (URL) again to download the text files for this program.
-\par To run the program, install Anaconda for Python 3.5 from \url{https://www.continuum.io/downloads}. This will make sure that everything is installed correctly. Once this
-is installed, restart your terminal then type \q{pip install tabulate} to install the missing package needed for this program.
+To install the program, make sure you have Git installed on your system as well as Git LFS (for
+large files). Get the URL of the project from GitHub, navigate to where you would like the project
+to be stored and run git clone (URL) in your terminal/command line. This will pull the project from
+GitHub. Then type \q{git lfs track *.txt} into your terminal to make sure that the large file system
+is tracking text files, before running git clone (URL) again to download the text files for this
+program.\par To run the program, install Anaconda for Python 3.5 from
+\url{https://www.continuum.io/downloads}. This will make sure that everything is installed
+correctly. Once this is installed, restart your terminal then type \q{pip install tabulate} to
+install the missing package needed for this program.
 
 
 \section{Running}
-There are two options for this. Either navigate to the directory containing the project in your terminal and type Testing2.py
-or load the project up in PyCharm and run it from there.
+There are two options for this. Either navigate to the directory containing the project in your terminal and type \q{python3 ./Testing2.py} or load the project up in PyCharm and run it from there.
 
-\section{Code Explanation}
-This section is intended to explain what the code in the program does, as quite a lot of it is repeated and it saves repeating comments. The self arguments that every function has
-refer to global variables and constants.
+
+\section{Code Explanation} This section is intended to explain what the code in the program does, as
+quite a lot of it is repeated and it saves repeating comments. The self arguments that every
+function has refer to global variables and constants.
 \subsection{AttenuationSearch.py}
-\inputminted[linenos, breaklines]{python}{../AttenuationSearch.py}
-This is AttenuationSearch.py. Its purpose is to search through the DSA sheet in the spreadsheet and find the closest attenuation to the input attenuation. The first function,
-attlist, just generates a list of all the values present in the DSA sheet, then returns it. It does this by iterating through the column with the S21 values of attenuation,
-checking if they have a value, and appending them to the list if they do. The row offset in line 8 is to remove anything that is not a number from the search area.\par The next
-function, closest, takes as its argument attlist, which is the list generated in the previous function. It uses a lambda function to find the value with the smallest absolute
-distance from the target attenuation, which is called through self.targetatt. This is then converted into a decimal value, as this allows for rounding, unlike a float, and then
-returns the value.\par The last function takes as its arguments attlist and closest, and then it iterates through the rows, finding which value is equal to the closest value
-then gets the values needed for various other parts of the program from the spreadsheet. All these are then returned in a data dictionary, which is a data type in python that
-allows for values to be referenced using a key.
+\inputminted[linenos, breaklines]{python}{../src/AttenuationSearch.py}
+This is AttenuationSearch.py.
+Its purpose is to search through the DSA sheet in the spreadsheet and find the closest attenuation
+to the input attenuation. The first function, attlist, just generates a list of all the values
+present in the DSA sheet, then returns it. It does this by iterating through the column with the S21
+values of attenuation, checking if they have a value, and appending them to the list if they do. The
+row offset in line 8 is to remove anything that is not a number from the search area.\par The next
+function, closest, takes as its argument attlist, which is the list generated in the previous
+function. It uses a lambda function to find the value with the smallest absolute distance from the
+target attenuation, which is called through self.targetatt. This is then converted into a decimal
+value, as this allows for rounding, unlike a float, and then returns the value.\par The last
+function takes as its arguments attlist and closest, and then it iterates through the rows, finding
+which value is equal to the closest value then gets the values needed for various other parts of the
+program from the spreadsheet. All these are then returned in a data dictionary, which is a data type
+in python that allows for values to be referenced using a key.
 \subsection{extras.py}
-\inputminted[linenos, breaklines]{python}{../extras.py}
-Extras.py is the multi-use module in this program. The first four functions are used to find if there is a single array answer. These all work in roughly the same way. First, the
-looks to see if the target phase is actually present at all in the spreadsheet. If it is then it returns that value, along with the corresponding row and attenuation. Otherwise,
-it uses a lambda function to find the closest value in the set (which is like a list but doesn`t allow for duplicate values) and returns the values for that. \par The checkall function
-is what controls the previous four functions. It calls them then decides which value to return, by looking to see if any of the returned values equal the target value, and if not finding
-the one with the smallest distance. \par The final module in this takes the most accurate values from finding one, two, two, three and four phase answers and then returns the best one.
-the way it is laid out, if a value is found with two and three phases, the program will always prefer the more efficient solution (i.e. the one with the fewest phases involved).
-\subsection{FourPhase.py}
-\inputminted[linenos, breaklines]{python}{../FourPhase.py}
-This is FourPhase.py. The first function, closestfinder, finds the closest value to the target value. The line starting \q{combined =} gets the path of the directory where the program
-currently is running and then loads the text file specified, before loading it into a set, which ensures there are no duplicate numbers present. The following line uses
-a lambda function, which is a function that isn't attached to an identifier, so is only called in that one spot. The purpose of this lambda function is to find the
-number with the smallest absolute difference from the target. These two numbers are converted into decimal format, which is like a floating point number but it allows
-for rounding, so the number isn't 64 bits. The closest value is then returned to whatever bit of code called it, and is then used later in the program.\par
-The other function, check, is an enormous bit of code, but in essence what it does is iterates through the four lists of numbers available to it, s180, s90, s45 and s225,
-which correspond to the four spreadsheets of data. It then adds the four numbers together, one from each sheet, and checks to see if the total matches
-the closest value from the previous snippet. If the total matches then it it iterates through each sheet in turn, looking for the value of the corresponding
-iterator (e.g.it looks for the value of i in the 180 sheet). When it finds this value, it assigns the value of the row (the value in the zeroth column) to row(n),
-the value of the attenuation of that phase to att(n), then it works out the difference in phases between the phase at 32GHz and the phase at 24GHz. This is used
-in other parts of the program.
+\inputminted[linenos, breaklines]{python}{../src/extras.py}
+Extras.py is the multi-use module in
+this program. The first four functions are used to find if there is a single array answer. These all
+work in roughly the same way. First, the program looks to see if the target phase is actually
+present at all in the spreadsheet. If it is then it returns that value, along with the corresponding
+row and attenuation. Otherwise, it uses a lambda function to find the closest value in the set
+(which is like a list but doesn`t allow for duplicate values) and returns the values for that. \par
+The checkall function is what controls the previous four functions. It calls them then decides which
+value to return, by looking to see if any of the returned values equal the target value, and if not
+finding the one with the smallest distance. \par The final module in this takes the most accurate
+values from finding one, two, two, three and four phase answers and then returns the best one. The
+way it is laid out means that if a value is found with multiple phases (e.g. 2, 3 and 4 phases), the
+program will always prefer the more efficient solution (i.e. the one with the fewest phases
+involved). \
+subsection{FourPhase.py}
+\inputminted[linenos, breaklines]{python}{../src/FourPhase.py}
+This is FourPhase.py. The first function, closestfinder, finds the closest value to the target
+value. The line starting \q{combined =} gets the path of the directory where the program currently
+is running and then loads the text file specified, before loading it into a set, which ensures there
+are no duplicate numbers present. The following line uses a lambda function, which is a function
+that isn't attached to an identifier, so is only called in that one spot. The purpose of this lambda
+function is to find the number with the smallest absolute difference from the target. These two
+numbers are converted into decimal format, which is like a floating point number but it allows for
+rounding, so the number isn't 64 bits. The closest value is then returned to whatever bit of code
+called it, and is then used later in the program.\par The other function, check, is an enormous bit
+of code, but in essence what it does is iterates through the four lists of numbers available to it,
+s180, s90, s45 and s225, which correspond to the four spreadsheets of data. It then adds the four
+numbers together, one from each sheet, and checks to see if the total matches the closest value from
+the previous snippet. If the total matches then it it iterates through each sheet in turn, looking
+for the value of the corresponding iterator (e.g.it looks for the value of i in the 180 sheet). When
+it finds this value, it assigns the value of the row (the value in the zeroth column) to row(n), the
+value of the attenuation of that phase to att(n), then it works out the difference in phases between
+the phase at 32GHz and the phase at 24GHz. This is used in other parts of the program.
 \subsection{lookuptablegenerator.py}
-\inputminted[linenos, breaklines]{python}{../lookuptablegenerator.py}
-This module is supposed to be rarely used. Its purpose is to generate a table of 64 values of either attenuation or phase, and then output them in an easily readable way
-using the tabulate module. \par Starting with the tablegen function. This generates sets for the different phases. It then creates a list of the headers used by tabulate.
-Then, it starts the main part of the function, where it iterates from 1 to 64 and stores this value in i, before calculating the appropriate multiple of $\frac{-360}{64}$
-to be used in this run through the cycle. It then runs in much the same way as the main program (seen later) to get the values of the best results for that attenuation.
-Once this has been completed it goes through a very long series of if/else if statements to find the settings to output to the user. The settings themselves are calculated by
-taking the row number and formatting it into binary, with various lengths of leading bits. This starts on line 83. The relevant values are added to the table, which is a list
-of lists. Once the program has run through 64 times, it prints the table out with nice formatting, and then outputs all the values to a CSV file for easier browsing once the
-terminal window has been closed. atttablegen is very similar, it just looks for the attenuation as opposed to the phase.
+\inputminted[linenos, breaklines]{python}{../src/lookuptablegenerator.py}
+This module is supposed to be rarely used. Its purpose is to generate a table of 64 values of
+either attenuation or phase, and then output them in an easily readable way using the tabulate
+module. \par Starting with the tablegen function. This generates sets for the different phases. It
+then creates a list of the headers used by tabulate. Then, it starts the main part of the function,
+where it iterates from 1 to 64 and stores this value in i, before calculating the appropriate
+multiple of $\frac{-360}{64}$ to be used in this run through the cycle. It then runs in much the
+same way as the main program (seen later) to get the values of the best results for that
+attenuation. Once this has been completed it goes through a very long series of if/else if
+statements to find the settings to output to the user. The settings themselves are calculated by
+taking the row number and formatting it into binary, with various lengths of leading bits. This
+starts on line 83. The relevant values are added to the table, which is a list of lists. Once the
+program has run through 64 times, it prints the table out with nice formatting, and then outputs
+all the values to a CSV file for easier browsing once the terminal window has been closed.
+atttablegen is very similar, it just looks for the attenuation as opposed to the phase.
 \subsection{minattvar.py}
-\inputminted[linenos, breaklines]{python}{../minattvar.py}
-This module searches for the attenuation value with the minimum variation across frequency. It does this by finding the n closest values, n being an integer specified by the
- user, and calling the attenuation search module then using the phase value from calling attenuation search. The attenuation for 24GHz is subtracted from the attenuation for
- 32GHz, and then it finds the smallest absolute difference and returns the dictionary with that value in.
- \subsection{mininsertloss.py}
- \inputminted[linenos, breaklines]{python}{../mininsertloss.py}
-This module works in much the same way as the previous module, but instead of using AttenuationSearch, it uses FourPhase, and finds the value for the total attenuation from
-all four phases, then takes the minimum value out of the n values found.
+\inputminted[linenos, breaklines]{python}{../src/minattvar.py}
+This module searches for the attenuation value with the minimum variation across frequency. It does
+this by finding the n closest values, n being an integer specified by the user, and calling the
+attenuation search module then using the phase value from calling attenuation search. The
+attenuation for 24GHz is subtracted from the attenuation for 32GHz, and then it finds the smallest
+absolute difference and returns the dictionary with that value in.
+\subsection{mininsertloss.py}
+\inputminted[linenos, breaklines]{python}{../src/mininsertloss.py}
+This module works in much the same way as the previous module, but instead of using
+AttenuationSearch, it uses FourPhase, and finds the value for the total attenuation from all four
+phases, then takes the minimum value out of the n values found.
 \subsection{minphaseatt.py}
-\inputminted[linenos, breaklines]{python}{../minphaseatt.py}
-Another module that works in much the same way as the previous two. In this case it takes the differences in phase across frequency from the DSA sheet and finds the smallest
-difference in phase between 24 and 32 GHz.
+\inputminted[linenos, breaklines]{python}{../src/minphaseatt.py}
+Another module that works in much the same way as the previous two. In this case it takes the
+differences in phase across frequency from the DSA sheet and finds the smallest difference in phase
+between 24 and 32 GHz.
 \subsection{minphasevariation}
-\inputminted[linenos, breaklines]{python}{../minphasevariation.py}
-This module is the last of the four very similar modules, except in this case it finds the minimum phase variation across frequency by using FourPhase.py and getting the
-phases for 24 and 32 GHz before returning the option with the minimum phase variation.
+\inputminted[linenos, breaklines]{python}{../src/minphasevariation.py}
+This module is the last of the four very similar modules, except in this case it finds the minimum phase variation across frequency by using FourPhase.py and getting the phases for 24 and 32 GHz before returning the option with the minimum phase variation.
 \subsection{Testing2.py}
 \inputminted[linenos, breaklines]{python}{../Testing2.py}
-This is the main module of the program. The first part, \_\_init\_\_ is where all the global variables are created, most of which are values referring to various columns in
-the spreadsheets of data. This is to make remembering values easier. This is also where the sheets themselves are loaded into memory, using openpyxl. The snippet
+This is the main module of the program. The first part, \_\_init\_\_ is where all the global
+variables are created, most of which are values referring to various columns in the spreadsheets of
+data. This is to make remembering values easier. This is also where the sheets themselves are
+loaded into memory, using openpyxl. The snippet
 \mint{python}|os.path.join(os.path.dirname(__file__), `source.xlsx`)|
-is a way of getting the absolute path of the file without hard coding it, due to the program not running if the file paths are relative. The main function is what controls
-everything else, It starts by getting an input from the user to choose whether they want to generate a table or find a specific value. If they want to find a specific value
-then 
-
+is a way of getting the absolute path of the file without hard coding it, due to the program not
+running if the file paths are relative.\par The main function is what controls everything else, It
+starts by getting an input from the user to choose whether they want to generate a table or find a
+specific value. If they want to find a specific value then it asks them to choose what constraint
+they would like on the number. Following this the program enters an if/else if loop to decide what
+to do depending on what letter was input. If the user chooses to generate a table then the program
+asks whether they would like to generate it for phase or attenuation, and calls other modules
+depending on the answer. The last two lines of this (146 and 147) are the two parts of the program
+that actually call the main function and make everything run.
+\subsection{ThreePhase.py}
+\inputminted[linenos, breaklines]{python}{../src/ThreePhase.py}
+This module, and the one following (TwoPhase.py) are the two longest. They also repeat a lot so
+this will only describe one of the functions, as it can be repeated multiple times for each of the
+remaining functions. These functions start by opening the text file containing all the possible
+combinations of answers using the three arrays. It then creates a of numbers, and finds the closest
+number to the target. It then iterates through every number in each of the three sets, creating a
+total for each combination and checking if that answer matches the answer determined by the program
+to be the closest. If it is then it finds all of the required information, such as attenuation, row
+and the phase difference. Once it has done this it returns all of them in one massive data
+dictionary that can be used in other parts of the program if needed. The checkall function is used
+to find the optimum solution. It checks to see which of the totals is closest and then returns that
+dictionary.
+\subsection{TwoPhase.py}
+\inputminted[linenos, breaklines]{python}{../src/TwoPhase.py}
+This is very similar to ThreePhase.py, so there won't be much detail in this section. The function
+is exactly the same, it just adds two arrays together as opposed to three. This is also by far the
+longest module in the program, due to essentially repeating six times.
+\subsection{txtfilegen.py}
+\inputminted[linenos,breaklines]{python}{../src/txtfilegen.py}
+This is very much an internal file that was only created for one purpose, so shouldn't be used
+unless everything is ruined, but the GitHub repository should be the first stop to fixing any
+problems.
+\subsection{numberformatting.py}
+\inputminted[linenos, breaklines]{python}{../src/numberformatting.py}
+This is a module to format numbers and return them as their binary equivalent with set numbers of
+leading bits, so they can be automatically input into the MPAC. Similar stuff to
+lookuptablegenerator's formatting section.
+\section{Troubleshooting}
+These are some of the steps to take if the program isn't working for some reason.
+\begin{itemize}
+	\item Download a new copy of the project from GitHub and run that.
+	\item Run the program through PyCharm if you're running it in a terminal, or vice versa
+	\item Reinstall Python
+	\item Google the error
+\end{itemize}
+\huge\uppercase{If all else fails} \normalsize then contact me with proof that you
+have tried every other avenue available to you. But not before. This offer will be revoked if any
+requests that I deem to be wasting my time are made.
 \end{document}

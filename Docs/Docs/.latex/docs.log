@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.9.16)  20 SEP 2016 09:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.9.16)  20 SEP 2016 16:04
 entering extended mode
-**C:/Users/tmoffat/Documents/GitHub/TestingEnv/Docs/docs.tex
-(C:/Users/tmoffat/Documents/GitHub/TestingEnv/Docs/docs.tex
+**./docs.tex
+(docs.tex
 LaTeX2e <2016/03/31> patch level 3
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls
@@ -1189,7 +1189,8 @@ cs.aex <nul: /p x=^%~$PATH:i>> docs.aex)...executed.
 
 runsystem(del docs.aex)...executed.
 
- (docs.aux)
+
+(C:\Users\tmoffat\Documents\GitHub\TestingEnv\Docs\Docs\.latex\docs.aux)
 \openout1 = `docs.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -1241,7 +1242,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 18.
 LaTeX Info: Redefining \pageref on input line 18.
 LaTeX Info: Redefining \nameref on input line 18.
- (docs.out) (docs.out)
+
+(C:\Users\tmoffat\Documents\GitHub\TestingEnv\Docs\Docs\.latex\docs.out)
+(C:\Users\tmoffat\Documents\GitHub\TestingEnv\Docs\Docs\.latex\docs.out)
 \@outlinefile=\write9
 \openout9 = `docs.out'.
 
@@ -1326,14 +1329,14 @@ LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 22.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 30.
+(Font)              <7> on input line 33.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 30.
+(Font)              <5> on input line 33.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 41.
+(Font)              scaled to size 12.0pt on input line 44.
  (_minted-docs/default-pyg-prefix.pygstyle)
 (_minted-docs/default.pygstyle)
-(_minted-docs/3F2D5570FA0337A2FD676F2A83F2559A517D9D27E669B24E69C770ACE3C654AE.
+(_minted-docs/3F2D5570FA0337A2FD676F2A83F2559A7111296B77BCE796024ED533D1B52AFC.
 pygtex
 
 LaTeX Font Warning: Font shape `T1/FiraMono-TOsF/m/it' undefined
@@ -1361,9 +1364,9 @@ LaTeX Font Info:    Font shape `T1/FiraMono-TOsF/m/n' will be
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
 (Font)              scaled to size 5.0pt on input line 35.
  [2])
-(_minted-docs/DEDC2E4B274FB2CBADCAC97A4C85CF44B915075F1A1B9EFA55B26B8308116810.
+(_minted-docs/DEDC2E4B274FB2CBADCAC97A4C85CF44037D74F26A0A356ABAB037857D114329.
 pygtex [3] [4] [5] [6] [7] [8])
-(_minted-docs/0E55229D985BC07204C32520282EA958A9FD2E535507EBA1B6CB87F6CAE02AF8.
+(_minted-docs/0E55229D985BC07204C32520282EA958C14719A94F56B7F98E074EFF664C7BB9.
 pygtex
 Overfull \hbox (49.99538pt too wide) in paragraph at lines 31--31
 \T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
@@ -1437,9 +1440,9 @@ Overfull \hbox (61.99538pt too wide) in paragraph at lines 68--68
  []
 
 ) [11]
-(_minted-docs/5214A90211CBC3FBA1D4C131E22ABB9244AE01B98FFE6FED5B8F5862115CC4A0.
+(_minted-docs/ADDFB5D4F446B284956F6FBE631BBB7A96D4303260CD16490AF6406AE3E5AD9D.
 pygtex [12] [13] [14] [15])
-(_minted-docs/9B3D74B1CE442EE017E9B1324D3CE400AD52BC0039F9CA8D2D733A3C477B3EC0.
+(_minted-docs/9AACC07BBCD66EDFEA593977F15C5CFECD20EE0FE823E51D0BF45DF40B5D7751.
 pygtex [16]
 
 LaTeX Font Warning: Font shape `TS1/FiraMono-TOsF/m/it' undefined
@@ -1449,13 +1452,13 @@ LaTeX Font Warning: Font shape `TS1/FiraMono-TOsF/m/it' undefined
 LaTeX Font Info:    Font shape `TS1/FiraMono-TOsF/m/it' will be
 (Font)              scaled to size 10.0pt on input line 17.
 [17])
-(_minted-docs/2A0AD37CF87E3F3CCF91FD70A8F184AA3AB38E3E4A58358C0AADCF05C62B0335.
+(_minted-docs/9F541638CB2DF72A76637BD000A2FE8E3DA4A16D12FDD8FB1E2AC793E0311415.
 pygtex) [18]
-(_minted-docs/CBCF8E9E08B2B5F28CB3CBD03CCEC75F649D42EAFE008E9C4FAC854447B2DDC6.
+(_minted-docs/E108FB7DDE731D7FFDCD529940635175B7DC7BAAF49E09AF19AFEB9AFC2BBA93.
 pygtex)
-(_minted-docs/B5AC783EDF2F5E38B94833EE73B56AE27C9152CFB90C863EED4085E5E2CA9894.
+(_minted-docs/52FEE3293C013B31599872C7F2A6613CAA0F40D67A518D2D2CE4E6ACF26E8E37.
 pygtex [19])
-(_minted-docs/3B06EE2ED36CEA3CD6911DEF9CFF36683B86D6FD1564E2F8E9DDB91C1426454A.
+(_minted-docs/A38CDD5A81482B2FBFCF16CC9EA050E93B86D6FD1564E2F8E9DDB91C1426454A.
 pygtex [20] [21]
 Overfull \hbox (25.99538pt too wide) in paragraph at lines 70--70
 \T1/FiraMono-TOsF/m/it/10 list180[].[]append(dec[].[]Decimal(row[[]self[][].[]p
@@ -1477,7 +1480,7 @@ pygtex
 Missing character: There is no ` in font FiraMono-Regular-tosf-ts1!
 Missing character: There is no ` in font FiraMono-Regular-tosf-ts1!
 ) [24]
-(_minted-docs/4E0001BA4ECEF2CFEACF35622334182F2B81DB2D7C975807A557C5F9D8C13D73.
+(_minted-docs/4E0001BA4ECEF2CFEACF35622334182F01F395897735C3ACBD5DD5E8F4CA0330.
 pygtex
 Overfull \hbox (25.99538pt too wide) in paragraph at lines 23--23
 \T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
@@ -1688,14 +1691,255 @@ Overfull \hbox (37.99538pt too wide) in paragraph at lines 199--199
 ].[]quantize(|  
  []
 
-[32] [33]) [34]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 113.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 113.
- (docs.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 113.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 113.
+[32] [33])
+(_minted-docs/0535D0B0714458755CA35FF20B851EE19C7ADD6753EDAE70F9E354DD74DC5BDB.
+pygtex
+Overfull \hbox (1.99538pt too wide) in paragraph at lines 23--23
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
+[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 25--25
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase24][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 27--27
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase32][].[]value)[
+].[]quantize(|  
+ []
+
+[34]
+Overfull \hbox (1.99538pt too wide) in paragraph at lines 34--34
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
+[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 36--36
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase24][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (1.99538pt too wide) in paragraph at lines 38--38
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att32][].[]value)[].
+[]quantize(|  
+ []
+
+[35]
+Overfull \hbox (1.99538pt too wide) in paragraph at lines 61--61
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
+[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 63--63
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase24][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 65--65
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase32][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (1.99538pt too wide) in paragraph at lines 72--72
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
+[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 74--74
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase24][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 76--76
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase32][].[]value)[
+].[]quantize(|  
+ []
+
+[36]
+Overfull \hbox (1.99538pt too wide) in paragraph at lines 99--99
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
+[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 101--101
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase24][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 103--103
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase32][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (1.99538pt too wide) in paragraph at lines 110--110
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
+[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 112--112
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase24][].[]value)[
+].[]quantize(|  
+ []
+
+[37]
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 114--114
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase32][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (1.99538pt too wide) in paragraph at lines 137--137
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
+[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 139--139
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase24][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 141--141
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase32][].[]value)[
+].[]quantize(|  
+ []
+
+[38]
+Overfull \hbox (1.99538pt too wide) in paragraph at lines 148--148
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
+[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 150--150
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase24][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 152--152
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase32][].[]value)[
+].[]quantize(|  
+ []
+
+[39]
+Overfull \hbox (1.99538pt too wide) in paragraph at lines 175--175
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
+[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 177--177
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase24][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 179--179
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase32][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (1.99538pt too wide) in paragraph at lines 186--186
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
+[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 188--188
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase24][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 190--190
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase32][].[]value)[
+].[]quantize(|  
+ []
+
+[40]
+Overfull \hbox (1.99538pt too wide) in paragraph at lines 213--213
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
+[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 215--215
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase24][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 217--217
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase32][].[]value)[
+].[]quantize(|  
+ []
+
+
+Overfull \hbox (1.99538pt too wide) in paragraph at lines 224--224
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]att28][].[]value)[].
+[]quantize(|  
+ []
+
+
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 226--226
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase24][].[]value)[
+].[]quantize(|  
+ []
+
+[41]
+Overfull \hbox (13.99538pt too wide) in paragraph at lines 228--228
+\T1/FiraMono-TOsF/m/it/10 dec[].[]Decimal(row[[]self[][].[]phase32][].[]value)[
+].[]quantize(|  
+ []
+
+[42])
+(_minted-docs/0BAFB0CCC878018CAC2387CB799C621B7E92A5FAF17CB0AACBF11BF822834369.
+pygtex [43])
+docs.tex:152: Undefined control sequence
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Try loading font information for TS1+FiraSans-OsF on input 
+line 153.
+
+("C:\Users\tmoffat\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fira\ts1firasans
+-osf.fd"
+File: TS1FiraSans-OsF.fd 2015/05/23 (autoinst) Font definitions for TS1/FiraSan
+s-OsF.
+)
+LaTeX Font Info:    Font shape `TS1/FiraSans-OsF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 153.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
+(Font)              scaled to size 20.74pt on input line 156.
+ [44]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 158.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 158.
+
+(C:\Users\tmoffat\Documents\GitHub\TestingEnv\Docs\Docs\.latex\docs.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 158.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 158.
 Package rerunfilecheck Info: File `docs.out' has not changed.
-(rerunfilecheck)             Checksum: FDCE0252AC185BBCE30C2529EF8C82E4;844.
+(rerunfilecheck)             Checksum: 737784FD19FEFBBA535010541AE88D60;972.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1704,31 +1948,33 @@ runsystem(del docs.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 19175 strings out of 493334
- 368496 string characters out of 3129356
- 484273 words of memory out of 3000000
- 22256 multiletter control sequences out of 15000+200000
- 66297 words of font info for 44 fonts, out of 3000000 for 9000
+ 19262 strings out of 493334
+ 371617 string characters out of 3129356
+ 484427 words of memory out of 3000000
+ 22318 multiletter control sequences out of 15000+200000
+ 75105 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 54i,9n,73p,3268b,621s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 54i,9n,73p,3261b,621s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/fira/fir_
-mpt7xh.enc}{C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/
-fira/fir_xbqiro.enc} <C:\Users\tmoffat\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
-\jknappen\ec\dpi600\ecrm0500.pk>{C:/Users/tmoffat/AppData/Local/Programs/MiKTeX
- 2.9/fonts/enc/dvips/fira/fir_ekigrt.enc}<C:/Users/tmoffat/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/fira/FiraMono-Bold.pfb><C:/Users/tmoffat/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/fira/FiraMono-Regular.pfb><C:/U
-sers/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/fira/FiraSans
--Bold.pfb><C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/fira/FiraSans-Book.pfb><C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/tmoffat/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/tmoffat/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/tmo
-ffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb
->
-Output written on docs.pdf (34 pages, 420390 bytes).
+tg6zf6.enc}{C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/
+fira/fir_mpt7xh.enc}{C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/e
+nc/dvips/fira/fir_xbqiro.enc} <C:\Users\tmoffat\AppData\Local\MiKTeX\2.9\fonts\
+pk\ljfour\jknappen\ec\dpi600\ecrm0500.pk>{C:/Users/tmoffat/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/enc/dvips/fira/fir_ekigrt.enc}<C:/Users/tmoffat/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/fira/FiraMono-Bold.pfb><C:/Users/tmof
+fat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/fira/FiraMono-Regular.
+pfb><C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/fira
+/FiraSans-Bold.pfb><C:/Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/fira/FiraSans-Book.pfb><C:/Users/tmoffat/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/tmoffat/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/tmoffat/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/
+Users/tmoffat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmsy7.pfb>
+Output written on C:/Users/tmoffat/Documents/GitHub/TestingEnv/Docs/Docs/.latex
+/docs.pdf (44 pages, 443012 bytes).
 PDF statistics:
- 273 PDF objects out of 1000 (max. 8388607)
- 49 named destinations out of 1000 (max. 500000)
- 125 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 330 PDF objects out of 1000 (max. 8388607)
+ 61 named destinations out of 1000 (max. 500000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

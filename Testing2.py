@@ -1,17 +1,18 @@
 """Module to work on more ideas for MPAC tuning."""
+import os
 import decimal as dec
 import openpyxl as xl
-import extras as ex
-import TwoPhase as tp
-import ThreePhase as thp
-import FourPhase as fp
-import AttenuationSearch as ats
-import lookuptablegenerator as lutg
-import os
-import minphasevariation as mpv
-import mininsertloss as mil
-import minphaseatt as mpa
-import minattvar as mav
+from src import extras as ex
+from src import TwoPhase as tp
+from src import ThreePhase as thp
+from src import FourPhase as fp
+from src import AttenuationSearch as ats
+from src import lookuptablegenerator as lutg
+from src import minphasevariation as mpv
+from src import mininsertloss as mil
+from src import minphaseatt as mpa
+from src import minattvar as mav
+from src import numberformatting as nf
 
 
 class Main:
@@ -91,22 +92,25 @@ class Main:
                     "Please enter the desired phase shift for 28GHz")
                 self.k = input("How many values would you like to search?")
                 minphase = mpv.minvariation(self, set180, set90, set45, set225)
-                print(minphase)
+                print("The closest value is " + str(minphase[
+                      'total']) + ", giving a total variation of " + str(minphase['totalphasediff']))
+                formatted = nf.phaseformat(self, minphase)
+                print("The settings you need for this are:")
+                print("180: " + formatted['s180setting'])
+                print("90: " + formatted['s90setting'])
+                print("45: " + formatted['s45setting'])
+                print("22.5: " + formatted['s225setting'])
             elif minvarchoice == "E":
                 self.targetphase = input(
                     "Please enter the desired phase shift for 28GHz")
                 self.targetatt = input(
                     "Please enter the desired attenuation for 28GHz")
                 bestresult = ex.checkall(self, set180, set90, set45, set225)
-                print(bestresult)
                 bestresult2 = tp.checkall(self, set180, set90, set45, set225)
-                print(bestresult2)
                 bestresult3 = thp.checkall(self, set180, set90, set45, set225)
-                print(bestresult3)
                 closest = fp.closest_finder(self)
                 bestresult4 = fp.check(
                     self, set180, set90, set45, set225, closest)
-                print(bestresult4)
                 sollist = [bestresult['total'], bestresult2['total'],
                            bestresult3['total'], bestresult4['total']]
                 bestphase = ex.mostaccurate(
@@ -114,24 +118,49 @@ class Main:
                 attlist = ats.attlist(self)
                 closest = ats.closest(self, attlist)
                 bestatt = ats.attenuationsearch(self, attlist, closest)
-                print(bestatt)
+                print("The best result is " + str(bestphase[
+                      'total']) + " and the best attenuation is " + str(bestatt['att2128']))
+                formatted = nf.phaseformat(self, bestphase)
+                formatatt = nf.attformat(self, bestatt)
+                print("The settings you need for this are: ")
+                print("180: " + formatted['s180setting'])
+                print("90: " + formatted['s90setting'])
+                print("45: " + formatted['s45setting'])
+                print("22.5: " + formatted['s225setting'])
+                print("Attenuation: " + formatatt)
             elif minvarchoice == "I":
+                self.targetphase = input(
+                    "Please enter the desired phase shift for 28GHz")
                 self.k = input("How many values would you like to search?")
                 mininsert = mil.mininsertloss(
                     self, set180, set90, set45, set225)
-                print(mininsert)
+                print("The best value is " + str(mininsert[
+                      'total']) + ", giving a total insertion loss of " + str(mininsert['totalatt']))
+                formatted = nf.phaseformat(self, mininsert)
+                print("The settings you need for this are: ")
+                print("180: " + formatted['s180setting'])
+                print("90: " + formatted['s90setting'])
+                print("45: " + formatted['s45setting'])
+                print("22.5: " + formatted['s225setting'])
             elif minvarchoice == "P":
                 self.targetatt = input(
                     "Please enter the desired attenuation for 28GHz")
                 self.k = input("How many values would you like to search?")
                 minamp = mpa.minampvar(self)
-                print(minamp)
+                print("The best value is " + str(minamp['att2128']) +
+                      ", giving a variation of " + str(minamp['variation']))
+                formatted = nf.attformat(self, minamp)
+                print("The setting you need is: " + formatted)
             elif minvarchoice == "A":
                 self.targetatt = input(
                     "Please enter the desired attenuation for 28GHz")
                 self.k = input("How many values would you like to search?")
                 minatt = mav.minattvar(self)
-                print(minatt)
+                print("The best attenuation is " +
+                      str(minatt['att2128']) + ", giving a variation of " + str(minatt['variation']))
+                resultssetting = nf.attformat(self, minatt)
+                print("The setting you need is: " + resultssetting)
+
             else:
                 print("Not a valid option")
         elif consent == 'T':

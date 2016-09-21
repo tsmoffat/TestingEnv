@@ -1,0 +1,81 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Format numbers to be output as settings for MPAC.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+
+\PYG{k}{def} \PYG{n+nf}{phaseformat}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{bestphase}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Format phase settings correctly.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{s180present} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{n}{s90present} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{n}{s45present} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{n}{s225present} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{if} \PYG{l+s+s1}{\PYGZsq{}source1\PYGZsq{}} \PYG{o+ow}{in} \PYG{n}{bestphase}\PYG{p}{:}
+        \PYG{k}{if} \PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}source1\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}s180\PYGZsq{}}\PYG{p}{:}
+            \PYG{n}{s180present} \PYG{o}{=} \PYG{l+m+mi}{1}
+        \PYG{k}{elif} \PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}source1\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}s90\PYGZsq{}}\PYG{p}{:}
+            \PYG{n}{s90present} \PYG{o}{=} \PYG{l+m+mi}{1}
+        \PYG{k}{elif} \PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}source1\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}s45\PYGZsq{}}\PYG{p}{:}
+            \PYG{n}{s45present} \PYG{o}{=} \PYG{l+m+mi}{1}
+        \PYG{k}{elif} \PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}source1\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}s225\PYGZsq{}}\PYG{p}{:}
+            \PYG{n}{s225present} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{k}{if} \PYG{l+s+s1}{\PYGZsq{}source2\PYGZsq{}} \PYG{o+ow}{in} \PYG{n}{bestphase}\PYG{p}{:}
+        \PYG{k}{if} \PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}source2\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}s90\PYGZsq{}}\PYG{p}{:}
+            \PYG{n}{s90present} \PYG{o}{=} \PYG{l+m+mi}{2}
+        \PYG{k}{elif} \PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}source2\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}s45\PYGZsq{}}\PYG{p}{:}
+            \PYG{n}{s45present} \PYG{o}{=} \PYG{l+m+mi}{2}
+        \PYG{k}{elif} \PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}source2\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}s225\PYGZsq{}}\PYG{p}{:}
+            \PYG{n}{s225present} \PYG{o}{=} \PYG{l+m+mi}{2}
+
+    \PYG{k}{if} \PYG{l+s+s1}{\PYGZsq{}source3\PYGZsq{}} \PYG{o+ow}{in} \PYG{n}{bestphase}\PYG{p}{:}
+        \PYG{k}{if} \PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}source3\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}s45\PYGZsq{}}\PYG{p}{:}
+            \PYG{n}{s45present} \PYG{o}{=} \PYG{l+m+mi}{3}
+        \PYG{k}{elif} \PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}source3\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}s225\PYGZsq{}}\PYG{p}{:}
+            \PYG{n}{s225present} \PYG{o}{=} \PYG{l+m+mi}{3}
+
+    \PYG{k}{if} \PYG{l+s+s1}{\PYGZsq{}source4\PYGZsq{}} \PYG{o+ow}{in} \PYG{n}{bestphase}\PYG{p}{:}
+        \PYG{k}{if} \PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}source4\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}s225\PYGZsq{}}\PYG{p}{:}
+            \PYG{n}{s225present} \PYG{o}{=} \PYG{l+m+mi}{4}
+    \PYG{k}{if} \PYG{n}{s180present} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{:}
+        \PYG{n}{s180setting} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZob{}0:02b\PYGZcb{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}row1\PYGZsq{}}\PYG{p}{])}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{s180setting} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZob{}0:02b\PYGZcb{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)}
+
+    \PYG{k}{if} \PYG{n}{s90present} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{:}
+        \PYG{n}{s90setting} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZob{}0:06b\PYGZcb{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}row1\PYGZsq{}}\PYG{p}{])}
+    \PYG{k}{elif} \PYG{n}{s90present} \PYG{o}{==} \PYG{l+m+mi}{2}\PYG{p}{:}
+        \PYG{n}{s90setting} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZob{}0:06b\PYGZcb{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}row2\PYGZsq{}}\PYG{p}{])}
+        \PYG{n}{s90present} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{s90setting} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZob{}0:06b\PYGZcb{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{l+m+mi}{32}\PYG{p}{)}
+
+    \PYG{k}{if} \PYG{n}{s45present} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{:}
+        \PYG{n}{s45setting} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZob{}0:09b\PYGZcb{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}row1\PYGZsq{}}\PYG{p}{])}
+    \PYG{k}{elif} \PYG{n}{s45present} \PYG{o}{==} \PYG{l+m+mi}{2}\PYG{p}{:}
+        \PYG{n}{s45setting} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZob{}0:09b\PYGZcb{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}row2\PYGZsq{}}\PYG{p}{])}
+        \PYG{n}{s45present} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{k}{elif} \PYG{n}{s45present} \PYG{o}{==} \PYG{l+m+mi}{3}\PYG{p}{:}
+        \PYG{n}{s45setting} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZob{}0:09b\PYGZcb{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}row3\PYGZsq{}}\PYG{p}{])}
+        \PYG{n}{s45present} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{s45setting} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZob{}0:09b\PYGZcb{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{l+m+mi}{256}\PYG{p}{)}
+
+    \PYG{k}{if} \PYG{n}{s225present} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{:}
+        \PYG{n}{s225setting} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZob{}0:09b\PYGZcb{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}row1\PYGZsq{}}\PYG{p}{])}
+    \PYG{k}{elif} \PYG{n}{s225present} \PYG{o}{==} \PYG{l+m+mi}{2}\PYG{p}{:}
+        \PYG{n}{s225setting} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZob{}0:09b\PYGZcb{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}row2\PYGZsq{}}\PYG{p}{])}
+        \PYG{n}{s225present} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{k}{elif} \PYG{n}{s225present} \PYG{o}{==} \PYG{l+m+mi}{3}\PYG{p}{:}
+        \PYG{n}{s225setting} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZob{}0:09b\PYGZcb{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}row3\PYGZsq{}}\PYG{p}{])}
+        \PYG{n}{s225present} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{k}{elif} \PYG{n}{s225present} \PYG{o}{==} \PYG{l+m+mi}{4}\PYG{p}{:}
+        \PYG{n}{s225setting} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZob{}0:09b\PYGZcb{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{bestphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}row4\PYGZsq{}}\PYG{p}{])}
+        \PYG{n}{s225present} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{s225setting} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZob{}0:09b\PYGZcb{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{l+m+mi}{256}\PYG{p}{)}
+
+    \PYG{k}{return} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}s180setting\PYGZsq{}}\PYG{p}{:} \PYG{n}{s180setting}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}s90setting\PYGZsq{}}\PYG{p}{:} \PYG{n}{s90setting}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}s45setting\PYGZsq{}}\PYG{p}{:} \PYG{n}{s45setting}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}s225setting\PYGZsq{}}\PYG{p}{:} \PYG{n}{s225setting}\PYG{p}{\PYGZcb{}}
+
+
+\PYG{k}{def} \PYG{n+nf}{attformat}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{bestatt}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Format attenuation for the MPAC.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{k}{return} \PYG{l+s+s1}{\PYGZsq{}\PYGZob{}0:012b\PYGZcb{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{bestatt}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}row28\PYGZsq{}}\PYG{p}{])}
+\end{Verbatim}

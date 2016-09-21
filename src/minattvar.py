@@ -1,7 +1,7 @@
 """Module to find minimum attenuation variation across frequency."""
 import decimal as dec
 from heapq import nsmallest
-import AttenuationSearch as ats
+from src import AttenuationSearch as ats
 
 
 def minattvar(self):
@@ -21,7 +21,6 @@ def minattvar(self):
     # Converts the values in closest_values to a decimal from a float. This
     # makes it easier to work with as it adds in rounding
     closest = [dec.Decimal(i) for i in closest_values]
-    print(closest)
     for i in closest:
         # Calls the AttenuationSearch module to search for the various values.
         # It does this for each item in the closest list
@@ -31,8 +30,6 @@ def minattvar(self):
         resultsdict['variation'] = variation
         totallist.append(resultsdict)
         attvar.append(variation)
-    print(totallist)
-    print(attvar)
     # Finds the smallest number in the list
     minattdiff = min(abs(i) for i in attvar)
     for m in totallist:

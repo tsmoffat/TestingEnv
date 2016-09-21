@@ -2,7 +2,7 @@
 import decimal as dec
 import os
 from heapq import nsmallest
-import FourPhase as fp
+from src import FourPhase as fp
 
 
 def mininsertloss(self, set180, set90, set45, set225):
@@ -20,9 +20,7 @@ def mininsertloss(self, set180, set90, set45, set225):
         resultsdict = fp.check(self, set180, set90, set45, set225, item)
         insertlosslist.append(resultsdict['totalatt'])
         total_values.append(resultsdict)
-    print(total_values)
     mininsertloss = min(abs(i) for i in insertlosslist)
     for m in total_values:
-        print(m['totalatt'])
         if abs(m['totalatt']) == mininsertloss:
             return m

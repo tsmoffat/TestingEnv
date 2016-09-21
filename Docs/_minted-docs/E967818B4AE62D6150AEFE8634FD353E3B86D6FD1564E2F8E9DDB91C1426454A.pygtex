@@ -1,18 +1,19 @@
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Module to work on more ideas for MPAC tuning.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{k+kn}{import} \PYG{n+nn}{os}
 \PYG{k+kn}{import} \PYG{n+nn}{decimal} \PYG{k+kn}{as} \PYG{n+nn}{dec}
 \PYG{k+kn}{import} \PYG{n+nn}{openpyxl} \PYG{k+kn}{as} \PYG{n+nn}{xl}
-\PYG{k+kn}{import} \PYG{n+nn}{extras} \PYG{k+kn}{as} \PYG{n+nn}{ex}
-\PYG{k+kn}{import} \PYG{n+nn}{TwoPhase} \PYG{k+kn}{as} \PYG{n+nn}{tp}
-\PYG{k+kn}{import} \PYG{n+nn}{ThreePhase} \PYG{k+kn}{as} \PYG{n+nn}{thp}
-\PYG{k+kn}{import} \PYG{n+nn}{FourPhase} \PYG{k+kn}{as} \PYG{n+nn}{fp}
-\PYG{k+kn}{import} \PYG{n+nn}{AttenuationSearch} \PYG{k+kn}{as} \PYG{n+nn}{ats}
-\PYG{k+kn}{import} \PYG{n+nn}{lookuptablegenerator} \PYG{k+kn}{as} \PYG{n+nn}{lutg}
-\PYG{k+kn}{import} \PYG{n+nn}{os}
-\PYG{k+kn}{import} \PYG{n+nn}{minphasevariation} \PYG{k+kn}{as} \PYG{n+nn}{mpv}
-\PYG{k+kn}{import} \PYG{n+nn}{mininsertloss} \PYG{k+kn}{as} \PYG{n+nn}{mil}
-\PYG{k+kn}{import} \PYG{n+nn}{minphaseatt} \PYG{k+kn}{as} \PYG{n+nn}{mpa}
-\PYG{k+kn}{import} \PYG{n+nn}{minattvar} \PYG{k+kn}{as} \PYG{n+nn}{mav}
+\PYG{k+kn}{from} \PYG{n+nn}{src} \PYG{k+kn}{import} \PYG{n}{extras} \PYG{k}{as} \PYG{n}{ex}
+\PYG{k+kn}{from} \PYG{n+nn}{src} \PYG{k+kn}{import} \PYG{n}{TwoPhase} \PYG{k}{as} \PYG{n}{tp}
+\PYG{k+kn}{from} \PYG{n+nn}{src} \PYG{k+kn}{import} \PYG{n}{ThreePhase} \PYG{k}{as} \PYG{n}{thp}
+\PYG{k+kn}{from} \PYG{n+nn}{src} \PYG{k+kn}{import} \PYG{n}{FourPhase} \PYG{k}{as} \PYG{n}{fp}
+\PYG{k+kn}{from} \PYG{n+nn}{src} \PYG{k+kn}{import} \PYG{n}{AttenuationSearch} \PYG{k}{as} \PYG{n}{ats}
+\PYG{k+kn}{from} \PYG{n+nn}{src} \PYG{k+kn}{import} \PYG{n}{lookuptablegenerator} \PYG{k}{as} \PYG{n}{lutg}
+\PYG{k+kn}{from} \PYG{n+nn}{src} \PYG{k+kn}{import} \PYG{n}{minphasevariation} \PYG{k}{as} \PYG{n}{mpv}
+\PYG{k+kn}{from} \PYG{n+nn}{src} \PYG{k+kn}{import} \PYG{n}{mininsertloss} \PYG{k}{as} \PYG{n}{mil}
+\PYG{k+kn}{from} \PYG{n+nn}{src} \PYG{k+kn}{import} \PYG{n}{minphaseatt} \PYG{k}{as} \PYG{n}{mpa}
+\PYG{k+kn}{from} \PYG{n+nn}{src} \PYG{k+kn}{import} \PYG{n}{minattvar} \PYG{k}{as} \PYG{n}{mav}
+\PYG{k+kn}{from} \PYG{n+nn}{src} \PYG{k+kn}{import} \PYG{n}{numberformatting} \PYG{k}{as} \PYG{n}{nf}
 
 
 \PYG{k}{class} \PYG{n+nc}{Main}\PYG{p}{:}
@@ -92,22 +93,25 @@
                     \PYG{l+s+s2}{\PYGZdq{}Please enter the desired phase shift for 28GHz\PYGZdq{}}\PYG{p}{)}
                 \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{k} \PYG{o}{=} \PYG{n+nb}{input}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}How many values would you like to search?\PYGZdq{}}\PYG{p}{)}
                 \PYG{n}{minphase} \PYG{o}{=} \PYG{n}{mpv}\PYG{o}{.}\PYG{n}{minvariation}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{set180}\PYG{p}{,} \PYG{n}{set90}\PYG{p}{,} \PYG{n}{set45}\PYG{p}{,} \PYG{n}{set225}\PYG{p}{)}
-                \PYG{k}{print}\PYG{p}{(}\PYG{n}{minphase}\PYG{p}{)}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}The closest value is \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{minphase}\PYG{p}{[}
+                      \PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{])} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}, giving a total variation of \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{minphase}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}totalphasediff\PYGZsq{}}\PYG{p}{]))}
+                \PYG{n}{formatted} \PYG{o}{=} \PYG{n}{nf}\PYG{o}{.}\PYG{n}{phaseformat}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{minphase}\PYG{p}{)}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}The settings you need for this are:\PYGZdq{}}\PYG{p}{)}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}180: \PYGZdq{}} \PYG{o}{+} \PYG{n}{formatted}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}s180setting\PYGZsq{}}\PYG{p}{])}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}90: \PYGZdq{}} \PYG{o}{+} \PYG{n}{formatted}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}s90setting\PYGZsq{}}\PYG{p}{])}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}45: \PYGZdq{}} \PYG{o}{+} \PYG{n}{formatted}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}s45setting\PYGZsq{}}\PYG{p}{])}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}22.5: \PYGZdq{}} \PYG{o}{+} \PYG{n}{formatted}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}s225setting\PYGZsq{}}\PYG{p}{])}
             \PYG{k}{elif} \PYG{n}{minvarchoice} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}E\PYGZdq{}}\PYG{p}{:}
                 \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase} \PYG{o}{=} \PYG{n+nb}{input}\PYG{p}{(}
                     \PYG{l+s+s2}{\PYGZdq{}Please enter the desired phase shift for 28GHz\PYGZdq{}}\PYG{p}{)}
                 \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetatt} \PYG{o}{=} \PYG{n+nb}{input}\PYG{p}{(}
                     \PYG{l+s+s2}{\PYGZdq{}Please enter the desired attenuation for 28GHz\PYGZdq{}}\PYG{p}{)}
                 \PYG{n}{bestresult} \PYG{o}{=} \PYG{n}{ex}\PYG{o}{.}\PYG{n}{checkall}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{set180}\PYG{p}{,} \PYG{n}{set90}\PYG{p}{,} \PYG{n}{set45}\PYG{p}{,} \PYG{n}{set225}\PYG{p}{)}
-                \PYG{k}{print}\PYG{p}{(}\PYG{n}{bestresult}\PYG{p}{)}
                 \PYG{n}{bestresult2} \PYG{o}{=} \PYG{n}{tp}\PYG{o}{.}\PYG{n}{checkall}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{set180}\PYG{p}{,} \PYG{n}{set90}\PYG{p}{,} \PYG{n}{set45}\PYG{p}{,} \PYG{n}{set225}\PYG{p}{)}
-                \PYG{k}{print}\PYG{p}{(}\PYG{n}{bestresult2}\PYG{p}{)}
                 \PYG{n}{bestresult3} \PYG{o}{=} \PYG{n}{thp}\PYG{o}{.}\PYG{n}{checkall}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{set180}\PYG{p}{,} \PYG{n}{set90}\PYG{p}{,} \PYG{n}{set45}\PYG{p}{,} \PYG{n}{set225}\PYG{p}{)}
-                \PYG{k}{print}\PYG{p}{(}\PYG{n}{bestresult3}\PYG{p}{)}
                 \PYG{n}{closest} \PYG{o}{=} \PYG{n}{fp}\PYG{o}{.}\PYG{n}{closest\PYGZus{}finder}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{)}
                 \PYG{n}{bestresult4} \PYG{o}{=} \PYG{n}{fp}\PYG{o}{.}\PYG{n}{check}\PYG{p}{(}
                     \PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{set180}\PYG{p}{,} \PYG{n}{set90}\PYG{p}{,} \PYG{n}{set45}\PYG{p}{,} \PYG{n}{set225}\PYG{p}{,} \PYG{n}{closest}\PYG{p}{)}
-                \PYG{k}{print}\PYG{p}{(}\PYG{n}{bestresult4}\PYG{p}{)}
                 \PYG{n}{sollist} \PYG{o}{=} \PYG{p}{[}\PYG{n}{bestresult}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{],} \PYG{n}{bestresult2}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{],}
                            \PYG{n}{bestresult3}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{],} \PYG{n}{bestresult4}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{]]}
                 \PYG{n}{bestphase} \PYG{o}{=} \PYG{n}{ex}\PYG{o}{.}\PYG{n}{mostaccurate}\PYG{p}{(}
@@ -115,24 +119,49 @@
                 \PYG{n}{attlist} \PYG{o}{=} \PYG{n}{ats}\PYG{o}{.}\PYG{n}{attlist}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{)}
                 \PYG{n}{closest} \PYG{o}{=} \PYG{n}{ats}\PYG{o}{.}\PYG{n}{closest}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{attlist}\PYG{p}{)}
                 \PYG{n}{bestatt} \PYG{o}{=} \PYG{n}{ats}\PYG{o}{.}\PYG{n}{attenuationsearch}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{attlist}\PYG{p}{,} \PYG{n}{closest}\PYG{p}{)}
-                \PYG{k}{print}\PYG{p}{(}\PYG{n}{bestatt}\PYG{p}{)}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}The best result is \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{bestphase}\PYG{p}{[}
+                      \PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{])} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{} and the best attenuation is \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{bestatt}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}att2128\PYGZsq{}}\PYG{p}{]))}
+                \PYG{n}{formatted} \PYG{o}{=} \PYG{n}{nf}\PYG{o}{.}\PYG{n}{phaseformat}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{bestphase}\PYG{p}{)}
+                \PYG{n}{formatatt} \PYG{o}{=} \PYG{n}{nf}\PYG{o}{.}\PYG{n}{attformat}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{bestatt}\PYG{p}{)}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}The settings you need for this are: \PYGZdq{}}\PYG{p}{)}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}180: \PYGZdq{}} \PYG{o}{+} \PYG{n}{formatted}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}s180setting\PYGZsq{}}\PYG{p}{])}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}90: \PYGZdq{}} \PYG{o}{+} \PYG{n}{formatted}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}s90setting\PYGZsq{}}\PYG{p}{])}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}45: \PYGZdq{}} \PYG{o}{+} \PYG{n}{formatted}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}s45setting\PYGZsq{}}\PYG{p}{])}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}22.5: \PYGZdq{}} \PYG{o}{+} \PYG{n}{formatted}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}s225setting\PYGZsq{}}\PYG{p}{])}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Attenuation: \PYGZdq{}} \PYG{o}{+} \PYG{n}{formatatt}\PYG{p}{)}
             \PYG{k}{elif} \PYG{n}{minvarchoice} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}I\PYGZdq{}}\PYG{p}{:}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase} \PYG{o}{=} \PYG{n+nb}{input}\PYG{p}{(}
+                    \PYG{l+s+s2}{\PYGZdq{}Please enter the desired phase shift for 28GHz\PYGZdq{}}\PYG{p}{)}
                 \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{k} \PYG{o}{=} \PYG{n+nb}{input}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}How many values would you like to search?\PYGZdq{}}\PYG{p}{)}
                 \PYG{n}{mininsert} \PYG{o}{=} \PYG{n}{mil}\PYG{o}{.}\PYG{n}{mininsertloss}\PYG{p}{(}
                     \PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{set180}\PYG{p}{,} \PYG{n}{set90}\PYG{p}{,} \PYG{n}{set45}\PYG{p}{,} \PYG{n}{set225}\PYG{p}{)}
-                \PYG{k}{print}\PYG{p}{(}\PYG{n}{mininsert}\PYG{p}{)}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}The best value is \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{mininsert}\PYG{p}{[}
+                      \PYG{l+s+s1}{\PYGZsq{}total\PYGZsq{}}\PYG{p}{])} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}, giving a total insertion loss of \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{mininsert}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}totalatt\PYGZsq{}}\PYG{p}{]))}
+                \PYG{n}{formatted} \PYG{o}{=} \PYG{n}{nf}\PYG{o}{.}\PYG{n}{phaseformat}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{mininsert}\PYG{p}{)}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}The settings you need for this are: \PYGZdq{}}\PYG{p}{)}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}180: \PYGZdq{}} \PYG{o}{+} \PYG{n}{formatted}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}s180setting\PYGZsq{}}\PYG{p}{])}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}90: \PYGZdq{}} \PYG{o}{+} \PYG{n}{formatted}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}s90setting\PYGZsq{}}\PYG{p}{])}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}45: \PYGZdq{}} \PYG{o}{+} \PYG{n}{formatted}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}s45setting\PYGZsq{}}\PYG{p}{])}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}22.5: \PYGZdq{}} \PYG{o}{+} \PYG{n}{formatted}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}s225setting\PYGZsq{}}\PYG{p}{])}
             \PYG{k}{elif} \PYG{n}{minvarchoice} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}P\PYGZdq{}}\PYG{p}{:}
                 \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetatt} \PYG{o}{=} \PYG{n+nb}{input}\PYG{p}{(}
                     \PYG{l+s+s2}{\PYGZdq{}Please enter the desired attenuation for 28GHz\PYGZdq{}}\PYG{p}{)}
                 \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{k} \PYG{o}{=} \PYG{n+nb}{input}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}How many values would you like to search?\PYGZdq{}}\PYG{p}{)}
                 \PYG{n}{minamp} \PYG{o}{=} \PYG{n}{mpa}\PYG{o}{.}\PYG{n}{minampvar}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{)}
-                \PYG{k}{print}\PYG{p}{(}\PYG{n}{minamp}\PYG{p}{)}
-            \PYG{k}{elif} \PYG{n}{minvarchoice} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}A\PYGZdq{}}\PYG{p}{:}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}The best value is \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{minamp}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}att2128\PYGZsq{}}\PYG{p}{])} \PYG{o}{+}
+                      \PYG{l+s+s2}{\PYGZdq{}, giving a variation of \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{minamp}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}variation\PYGZsq{}}\PYG{p}{]))}
+                \PYG{n}{formatted} \PYG{o}{=} \PYG{n}{nf}\PYG{o}{.}\PYG{n}{attformat}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{minamp}\PYG{p}{)}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}The setting you need is: \PYGZdq{}} \PYG{o}{+} \PYG{n}{formatted}\PYG{p}{)}
+            \PYG{k}{elif} \PYG{n}{minvarchoice} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}A\PYGZdq{}}\PYG{p}{:}
                 \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetatt} \PYG{o}{=} \PYG{n+nb}{input}\PYG{p}{(}
                     \PYG{l+s+s2}{\PYGZdq{}Please enter the desired attenuation for 28GHz\PYGZdq{}}\PYG{p}{)}
                 \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{k} \PYG{o}{=} \PYG{n+nb}{input}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}How many values would you like to search?\PYGZdq{}}\PYG{p}{)}
                 \PYG{n}{minatt} \PYG{o}{=} \PYG{n}{mav}\PYG{o}{.}\PYG{n}{minattvar}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{)}
-                \PYG{k}{print}\PYG{p}{(}\PYG{n}{minatt}\PYG{p}{)}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}The best attenuation is \PYGZdq{}} \PYG{o}{+}
+                      \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{minatt}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}att2128\PYGZsq{}}\PYG{p}{])} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}, giving a variation of \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{minatt}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}variation\PYGZsq{}}\PYG{p}{]))}
+                \PYG{n}{resultssetting} \PYG{o}{=} \PYG{n}{nf}\PYG{o}{.}\PYG{n}{attformat}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{minatt}\PYG{p}{)}
+                \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}The setting you need is: \PYGZdq{}} \PYG{o}{+} \PYG{n}{resultssetting}\PYG{p}{)}
+
             \PYG{k}{else}\PYG{p}{:}
                 \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Not a valid option\PYGZdq{}}\PYG{p}{)}
         \PYG{k}{elif} \PYG{n}{consent} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}T\PYGZsq{}}\PYG{p}{:}

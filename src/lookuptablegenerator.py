@@ -1,9 +1,9 @@
 """To generate a look-up table."""
 import decimal as dec
-import extras as ex
-import TwoPhase as twp
-import ThreePhase as thp
-import FourPhase as fp
+from src import extras as ex
+from src import TwoPhase as twp
+from src import ThreePhase as thp
+from src import FourPhase as fp
 import tabulate
 import os
 import csv
@@ -42,7 +42,8 @@ def tablegen(self):
         bestresult = ex.checkall(self, set180, set90, set45, set225)
         bestresult2 = twp.checkall(self, set180, set90, set45, set225)
         bestresult3 = thp.checkall(self, set180, set90, set45, set225)
-        bestresult4 = fp.check(self, set180, set90, set45, set225)
+        closest = fp.closest_finder(self)
+        bestresult4 = fp.check(self, set180, set90, set45, set225, closest)
         sollist = [bestresult['total'], bestresult2['total'],
                    bestresult3['total'], bestresult4['total']]
         bestphase = ex.mostaccurate(
@@ -51,7 +52,6 @@ def tablegen(self):
         s90present = 0
         s45present = 0
         s225present = 0
-        print(bestphase)
         if 'source1' in bestphase:
             if bestphase['source1'] == 's180':
                 s180present = 1
@@ -79,7 +79,6 @@ def tablegen(self):
         if 'source4' in bestphase:
             if bestphase['source4'] == 's225':
                 s225present = 4
-        print(s180present, s90present, s45present, s225present)
         if s180present == 1:
             s180setting = '{0:02b}'.format(bestphase['row1'])
         else:

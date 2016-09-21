@@ -3,7 +3,7 @@
 \PYG{k+kn}{import} \PYG{n+nn}{decimal} \PYG{k+kn}{as} \PYG{n+nn}{dec}
 \PYG{k+kn}{import} \PYG{n+nn}{os}
 \PYG{k+kn}{from} \PYG{n+nn}{heapq} \PYG{k+kn}{import} \PYG{n}{nsmallest}
-\PYG{k+kn}{import} \PYG{n+nn}{FourPhase} \PYG{k+kn}{as} \PYG{n+nn}{fp}
+\PYG{k+kn}{from} \PYG{n+nn}{src} \PYG{k+kn}{import} \PYG{n}{FourPhase} \PYG{k}{as} \PYG{n}{fp}
 
 
 \PYG{k}{def} \PYG{n+nf}{minvariation}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{set180}\PYG{p}{,} \PYG{n}{set90}\PYG{p}{,} \PYG{n}{set45}\PYG{p}{,} \PYG{n}{set225}\PYG{p}{):}
@@ -14,7 +14,6 @@
     \PYG{n}{closest\PYGZus{}values} \PYG{o}{=} \PYG{n}{nsmallest}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{k}\PYG{p}{),} \PYG{n}{combined}\PYG{p}{,} \PYG{n}{key}\PYG{o}{=}\PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n+nb}{abs}\PYG{p}{(}
         \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{targetphase}\PYG{p}{)))}
     \PYG{n}{closest} \PYG{o}{=} \PYG{p}{[}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{closest\PYGZus{}values}\PYG{p}{]}
-    \PYG{k}{print}\PYG{p}{(}\PYG{n}{closest}\PYG{p}{)}
     \PYG{n}{total\PYGZus{}values} \PYG{o}{=} \PYG{p}{[]}
     \PYG{n}{phasedifflist} \PYG{o}{=} \PYG{p}{[]}
     \PYG{k}{del} \PYG{n}{combined}
@@ -25,10 +24,8 @@
         \PYG{n}{resultsdict}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}totalphasediff\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{totalphasediff}
         \PYG{n}{phasedifflist}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{totalphasediff}\PYG{p}{)}
         \PYG{n}{total\PYGZus{}values}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{resultsdict}\PYG{p}{)}
-    \PYG{k}{print}\PYG{p}{(}\PYG{n}{total\PYGZus{}values}\PYG{p}{)}
     \PYG{n}{minphasediff} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{phasedifflist}\PYG{p}{)}
     \PYG{k}{for} \PYG{n}{m} \PYG{o+ow}{in} \PYG{n}{total\PYGZus{}values}\PYG{p}{:}
-        \PYG{k}{print}\PYG{p}{(}\PYG{n}{m}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}totalphasediff\PYGZsq{}}\PYG{p}{])}
         \PYG{k}{if} \PYG{n}{m}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}totalphasediff\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{minphasediff}\PYG{p}{:}
             \PYG{k}{return} \PYG{n}{m}
 \end{Verbatim}

@@ -1,0 +1,17 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Installation}{}% 2
+\BOOKMARK [1][-]{section.3}{Running}{}% 3
+\BOOKMARK [1][-]{section.4}{Code Explanation}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{AttenuationSearch.py}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{extras.py}{section.4}% 6
+\BOOKMARK [2][-]{subsection.4.3}{lookuptablegenerator.py}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.4}{minattvar.py}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.5}{mininsertloss.py}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.6}{minphaseatt.py}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.7}{minphasevariation}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.8}{Testing2.py}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.9}{ThreePhase.py}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.10}{TwoPhase.py}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.11}{txtfilegen.py}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.12}{numberformatting.py}{section.4}% 16
+\BOOKMARK [1][-]{section.5}{Troubleshooting}{}% 17

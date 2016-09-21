@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}A minor tool module for generating textfiles of combinations. Just for internal use really\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{k+kn}{import} \PYG{n+nn}{decimal} \PYG{k+kn}{as} \PYG{n+nn}{dec}
+\PYG{k+kn}{import} \PYG{n+nn}{openpyxl} \PYG{k+kn}{as} \PYG{n+nn}{xl}
+\PYG{k+kn}{from} \PYG{n+nn}{numbers} \PYG{k+kn}{import} \PYG{n}{Number}
+
+\PYG{n}{workbook} \PYG{o}{=} \PYG{n}{xl}\PYG{o}{.}\PYG{n}{load\PYGZus{}workbook}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Five RF Sections \PYGZhy{} Relative Effects.xlsx\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{s180} \PYG{o}{=} \PYG{n}{workbook}\PYG{o}{.}\PYG{n}{get\PYGZus{}sheet\PYGZus{}by\PYGZus{}name}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}180\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{s90} \PYG{o}{=} \PYG{n}{workbook}\PYG{o}{.}\PYG{n}{get\PYGZus{}sheet\PYGZus{}by\PYGZus{}name}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}90\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{s45} \PYG{o}{=} \PYG{n}{workbook}\PYG{o}{.}\PYG{n}{get\PYGZus{}sheet\PYGZus{}by\PYGZus{}name}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}45\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{s225} \PYG{o}{=} \PYG{n}{workbook}\PYG{o}{.}\PYG{n}{get\PYGZus{}sheet\PYGZus{}by\PYGZus{}name}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}22.5\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{f} \PYG{o}{=} \PYG{n+nb}{open}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}18090.txt\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}w\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{s180}\PYG{o}{.}\PYG{n}{iter\PYGZus{}rows}\PYG{p}{(}\PYG{n}{row\PYGZus{}offset}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{):}
+    \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n}{s90}\PYG{o}{.}\PYG{n}{iter\PYGZus{}rows}\PYG{p}{(}\PYG{n}{row\PYGZus{}offset}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{):}
+        \PYG{k}{print}\PYG{p}{(}\PYG{n}{j}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{i}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{n+nb+bp}{None} \PYG{o+ow}{and} \PYG{n}{j}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{n+nb+bp}{None}\PYG{p}{:}
+            \PYG{n}{convert1} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{i}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}
+            \PYG{n}{convert2} \PYG{o}{=} \PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{n}{j}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}
+            \PYG{n}{total} \PYG{o}{=} \PYG{n}{convert1} \PYG{o}{+} \PYG{n}{convert2}
+            \PYG{n}{total} \PYG{o}{=} \PYG{n}{total}\PYG{o}{.}\PYG{n}{quantize}\PYG{p}{(}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{Decimal}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.001\PYGZsq{}}\PYG{p}{),} \PYG{n}{rounding}\PYG{o}{=}\PYG{n}{dec}\PYG{o}{.}\PYG{n}{ROUND\PYGZus{}HALF\PYGZus{}UP}\PYG{p}{)}
+            \PYG{n}{f}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{total}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}
