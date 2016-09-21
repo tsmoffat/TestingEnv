@@ -4,3 +4,5 @@ tuning value to find the closest/most efficient values to an input value. Also c
 
 This is currently not particularly fast, it could be made more efficient by sorting all the values first, however with 60,000,000+ values
 this may take a really long time to sort in the first place.
+
+The documentation is available in Docs/.latex
